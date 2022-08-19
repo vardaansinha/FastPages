@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: My minimal markdown post.
 categories: [markdown]
-title: Testing Markdown Post
+title: Vardaan's Markdown Post
 ---
 # Example Markdown Post
 
