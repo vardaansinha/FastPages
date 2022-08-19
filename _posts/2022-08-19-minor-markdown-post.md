@@ -7,6 +7,6 @@ title: Testing Markdown Post
 ---
 # Example Markdown Post
 
-## Basic setup
+## Insane Markdown Skills:
 
 Hello! This is my sample markdown post.
