@@ -3,10 +3,11 @@ toc: true
 layout: post
 description: My minimal markdown post.
 categories: [markdown]
-title: Vardaan's Markdown Post
+title: Vardaan's Computer Science Goals
 ---
-# Example Markdown Post
+## My Goals for CSP This Year:
 
-## Insane Markdown Skills:
+Hello! My name is Vardaan, and I have many goals for CSP this year. I hope to gain a better understanding of **Python**, and I also hope to get more used to using **VSCode** for all my projects. 
 
-Hello! This is my sample markdown post.
+I am extremely excited for this class, as I love to work with my team and I love to work with technology.
+
