@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: My minimal markdown post.
+description: My goals for AP Computer Science Principles this year.
 categories: [markdown]
 title: Vardaan's Computer Science Goals
 ---
