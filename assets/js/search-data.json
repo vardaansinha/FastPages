@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Jupyter Notebook Experimentation",
-            "content": "About . This notebook is a demonstration of some of capabilities of fastpages with notebooks. . With fastpages you can save your jupyter notebooks into the _notebooks folder at the root of your repository, and they will be automatically be converted to Jekyll compliant blog posts! . I, Vardaan Sinha, am putting my Python skills to the test. .",
+            "content": "About . This notebook is a demonstration of some of capabilities of fastpages with notebooks. . With fastpages you can save your jupyter notebooks into the _notebooks folder at the root of your repository, and they will be automatically be converted to Jekyll compliant blog posts! . Python Skills . I am very excited to learn python, and I would like to show Python&#39;s print capability: . I, Vardaan Sinha, am putting my Python skills to the test. .",
             "url": "https://vardaansinha.github.io/FastPages/jupyter/2022/08/19/vardaan.html",
             "relUrl": "/jupyter/2022/08/19/vardaan.html",
             "date": " • Aug 19, 2022"
