@@ -5,9 +5,9 @@ categories: [notes]
 permalink: /notes/
 ---
 
-## Key Terms:
+# Key Terms:
 
-# GitHub-Related Terms:
+## GitHub-Related Terms:
 
 1. **Repository**: The location (for us, on Github) where we modify our fastpages site and collect all of our work for a particular project.
 
@@ -16,16 +16,16 @@ permalink: /notes/
 3. **Commit**: This means to save and commit changes in order for the changes to update on your site.
 
 
-# VSCode Terms:
+## VSCode Terms:
 
 1. **Source Control**: This is the tab in VSCode where you stage, commit, and sync changes.
 
 2. **Debug Console**: This is where you can debug and work around any issues in your VSCode files.
 
 
-## Application of these Terms:
+# Application of these Terms:
 
-# Cloning a Repository through WSL:
+## Cloning a Repository through WSL:
 
 ```bash
 (base) vardaan@LAPTOP-6CPSDHS5:~$ cd ./vscode # Changing the directory to your VSCode directory, which contains all of your cloned repositories.
@@ -39,7 +39,7 @@ Receiving objects: 100% (722/722), 9.46 MiB | 1.33 MiB/s, done.
 Resolving deltas: 100% (260/260), done.
 ```
 
-# Checking Status & Making Commits through WSL:
+## Checking Status & Making Commits through WSL:
 
 ```bash
 (base) vardaan@LAPTOP-6CPSDHS5:~/vscode$ dir
