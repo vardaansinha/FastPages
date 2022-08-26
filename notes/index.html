@@ -107,8 +107,8 @@ window.onload = wrap_img;
 
 <h1 id="cloning-a-repository-through-wsl">Cloning a Repository through WSL:</h1>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> vardaan@LAPTOP-6CPSDHS5:~<span class="nv">$ </span><span class="nb">cd</span> ./vscode
-<span class="o">(</span>base<span class="o">)</span> vardaan@LAPTOP-6CPSDHS5:~/vscode<span class="nv">$ </span>git clone <span class="s2">"https://github.com/SamitPoojary/FASTPAGES.git"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> vardaan@LAPTOP-6CPSDHS5:~<span class="nv">$ </span><span class="nb">cd</span> ./vscode <span class="c"># Changing the directory to your VSCode directory, which contains all of your cloned repositories.</span>
+<span class="o">(</span>base<span class="o">)</span> vardaan@LAPTOP-6CPSDHS5:~/vscode<span class="nv">$ </span>git clone <span class="s2">"https://github.com/SamitPoojary/FASTPAGES.git"</span> <span class="c"># Cloning my partner Samit's FastPages so that I can track his changes.</span>
 Cloning into <span class="s1">'FASTPAGES'</span>...
 remote: Enumerating objects: 722, <span class="k">done</span><span class="nb">.</span>
 remote: Counting objects: 100% <span class="o">(</span>613/613<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
@@ -116,6 +116,28 @@ remote: Compressing objects: 100% <span class="o">(</span>329/329<span class="o"
 remote: Total 722 <span class="o">(</span>delta 260<span class="o">)</span>, reused 479 <span class="o">(</span>delta 191<span class="o">)</span>, pack-reused 109
 Receiving objects: 100% <span class="o">(</span>722/722<span class="o">)</span>, 9.46 MiB | 1.33 MiB/s, <span class="k">done</span><span class="nb">.</span>
 Resolving deltas: 100% <span class="o">(</span>260/260<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+</code></pre></div></div>
+
+<h1 id="checking-status--making-commits-through-wsl">Checking Status &amp; Making Commits through WSL:</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> vardaan@LAPTOP-6CPSDHS5:~/vscode<span class="nv">$ </span><span class="nb">dir
+</span>APCSP  FASTPAGES  FastPages  fastpages <span class="c"># Showing the files that are in the 'vscode' directory.</span>
+<span class="o">(</span>base<span class="o">)</span> vardaan@LAPTOP-6CPSDHS5:~/vscode<span class="nv">$ </span><span class="nb">cd</span> ./FastPages
+<span class="o">(</span>base<span class="o">)</span> vardaan@LAPTOP-6CPSDHS5:~/vscode/FastPages<span class="nv">$ </span>git status
+On branch master
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/master'</span><span class="nb">.</span>
+
+Changes not staged <span class="k">for </span>commit:
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to update what will be committed<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">"git restore &lt;file&gt;..."</span> to discard changes <span class="k">in </span>working directory<span class="o">)</span>
+        modified:   .vscode/settings.json
+        modified:   _pages/01_about.md
+        modified:   _pages/02_notes.md
+
+no changes added to commit <span class="o">(</span>use <span class="s2">"git add"</span> and/or <span class="s2">"git commit -a"</span><span class="o">)</span> <span class="c"># This command shows the status of the repository (any modified files or changes that have not been committed). </span>
+<span class="o">(</span>base<span class="o">)</span> vardaan@LAPTOP-6CPSDHS5:~/vscode/FastPages<span class="nv">$ </span>git commit <span class="nt">-a</span>
+<span class="o">[</span>master 746b938] committing large changes <span class="k">for </span>bash committing large changes <span class="k">for </span>bash
+ 3 files changed, 21 insertions<span class="o">(</span>+<span class="o">)</span>, 9 deletions<span class="o">(</span>-<span class="o">)</span> <span class="c"># This commits all the changes, and you can use VSCode to sync the changes.</span>
 </code></pre></div></div>
 
   </div>
