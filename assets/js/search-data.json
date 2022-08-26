@@ -60,7 +60,7 @@
   
       ,"page0": {
           "title": "About Me",
-          "content": "Hi! I’m Vardaan Sinha, and I’m a high school junior who loves math, computer science, cyber-security, writing, and solving 21st century problems. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "content": "Hi! I’m Vardaan Sinha, and I’m a high school junior who loves math, computer science, cyber-security, writing, and solving 21st century problems. .",
           "url": "https://vardaansinha.github.io/FastPages/about/",
           "relUrl": "/about/",
           "date": ""
@@ -71,7 +71,7 @@
   
       ,"page1": {
           "title": "Computer Science Notes",
-          "content": "Key Terms: . GitHub-Related Terms: . Repository: The location (for us, on Github) where we modify our fastpages site and collect all of our work for a particular project. . | Clone: “Cloning” a repository means to copy a repository onto your local system for modification. . | Commit: This means to save and commit changes in order for the changes to update on your site. . | VSCode Terms: . Source Control: This is the tab in VSCode where you stage, commit, and sync changes. . | Debug Console: This is where you can debug and work around any issues in your VSCode files. . |",
+          "content": "Key Terms: . GitHub-Related Terms: . Repository: The location (for us, on Github) where we modify our fastpages site and collect all of our work for a particular project. . | Clone: “Cloning” a repository means to copy a repository onto your local system for modification. . | Commit: This means to save and commit changes in order for the changes to update on your site. . | VSCode Terms: . Source Control: This is the tab in VSCode where you stage, commit, and sync changes. . | Debug Console: This is where you can debug and work around any issues in your VSCode files. . | Application of these Terms: . Cloning a Repository through WSL: . (base) vardaan@LAPTOP-6CPSDHS5:~$ cd ./vscode (base) vardaan@LAPTOP-6CPSDHS5:~/vscode$ git clone &quot;https://github.com/SamitPoojary/FASTPAGES.git&quot; Cloning into &#39;FASTPAGES&#39;... remote: Enumerating objects: 722, done. remote: Counting objects: 100% (613/613), done. remote: Compressing objects: 100% (329/329), done. remote: Total 722 (delta 260), reused 479 (delta 191), pack-reused 109 Receiving objects: 100% (722/722), 9.46 MiB | 1.33 MiB/s, done. Resolving deltas: 100% (260/260), done. .",
           "url": "https://vardaansinha.github.io/FastPages/notes/",
           "relUrl": "/notes/",
           "date": ""
