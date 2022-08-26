@@ -58,6 +58,15 @@
 
   
   
+      ,"page0": {
+          "title": "About Me",
+          "content": "Hi! I’m Vardaan Sinha, and I’m a high school junior who loves math, computer science, cyber-security, writing, and solving 21st century problems. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "url": "https://vardaansinha.github.io/FastPages/about/",
+          "relUrl": "/about/",
+          "date": ""
+      }
+      
+  
 
   
       ,"page1": {
@@ -70,15 +79,6 @@
       
   
 
-  
-      ,"page2": {
-          "title": "About Me",
-          "content": "Hi! I’m Vardaan Sinha, and I’m a high school junior who loves math, computer science, cyber-security, writing, and solving 21st century problems. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
-          "url": "https://vardaansinha.github.io/FastPages/about/",
-          "relUrl": "/about/",
-          "date": ""
-      }
-      
   
 
   
