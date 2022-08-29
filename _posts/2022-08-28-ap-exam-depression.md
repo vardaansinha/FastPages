@@ -6,6 +6,16 @@ categories: [markdown,personal]
 title: Sadness
 ---
 
+<html>
+  <head>
+    <style>
+      h1{text-align: center;}
+    </style>
+  </head>
+  <body style = "background-color: #2596be;">
+  </body>
+</html>
+
 My table members and I have just received startling news; the APEL AP Exam and the AP Physics AP Exam are on the same day.
 
 Why would College Board do such a thing?
