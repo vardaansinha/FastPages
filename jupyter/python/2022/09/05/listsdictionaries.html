@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Lists, Dictionaries, Iterations | Vardaan’s FastPages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Lists, Dictionaries, Iterations" />
+<meta name="author" content="Vardaan Sinha" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A thorough demonstration of InfoDB, looping, and other Python components, such as dictionaries and lists." />
+<meta property="og:description" content="A thorough demonstration of InfoDB, looping, and other Python components, such as dictionaries and lists." />
+<link rel="canonical" href="https://vardaansinha.github.io/FastPages/jupyter/python/2022/09/05/listsdictionaries.html" />
+<meta property="og:url" content="https://vardaansinha.github.io/FastPages/jupyter/python/2022/09/05/listsdictionaries.html" />
+<meta property="og:site_name" content="Vardaan’s FastPages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-05T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Lists, Dictionaries, Iterations" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vardaan Sinha"},"dateModified":"2022-09-05T00:00:00-05:00","datePublished":"2022-09-05T00:00:00-05:00","description":"A thorough demonstration of InfoDB, looping, and other Python components, such as dictionaries and lists.","headline":"Lists, Dictionaries, Iterations","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/FastPages/jupyter/python/2022/09/05/listsdictionaries.html"},"url":"https://vardaansinha.github.io/FastPages/jupyter/python/2022/09/05/listsdictionaries.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/FastPages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://vardaansinha.github.io/FastPages/feed.xml" title="Vardaan's FastPages" /><link rel="shortcut icon" type="image/x-icon" href="/FastPages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/FastPages/">Vardaan&#39;s FastPages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/FastPages/about/">About Me</a><a class="page-link" href="/FastPages/notes/">Computer Science Notes</a><a class="page-link" href="/FastPages/categories/">Tags</a><a class="page-link" href="/FastPages/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Lists, Dictionaries, Iterations</h1><p class="page-description">A thorough demonstration of InfoDB, looping, and other Python components, such as dictionaries and lists.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-05T00:00:00-05:00" itemprop="datePublished">
+        Sep 5, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Vardaan Sinha</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/FastPages/categories/#jupyter">jupyter</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/FastPages/categories/#python">python</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/vardaansinha/FastPages/tree/master/_notebooks/2022-09-05-listsdictionaries.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/FastPages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/vardaansinha/FastPages/master?filepath=_notebooks%2F2022-09-05-listsdictionaries.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/FastPages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/vardaansinha/FastPages/blob/master/_notebooks/2022-09-05-listsdictionaries.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/FastPages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fvardaansinha%2FFastPages%2Fblob%2Fmaster%2F_notebooks%2F2022-09-05-listsdictionaries.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/FastPages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Types-of-Integers/Strings/Variables:">Types of Integers/Strings/Variables: </a></li>
+<li class="toc-entry toc-h1"><a href="#InfoDb-Demonstration:">InfoDb Demonstration: </a></li>
+<li class="toc-entry toc-h1"><a href="#Printing-InfoDb-Data:">Printing InfoDb Data: </a></li>
+<li class="toc-entry toc-h1"><a href="#Loops:">Loops: </a></li>
+<li class="toc-entry toc-h1"><a href="#While-Loops:">While Loops: </a></li>
+<li class="toc-entry toc-h1"><a href="#Recursive-Loops:">Recursive Loops: </a></li>
+<li class="toc-entry toc-h1"><a href="#Dictionary-Quiz:">Dictionary Quiz: </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-09-05-listsdictionaries.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Types-of-Integers/Strings/Variables:">
+<a class="anchor" href="#Types-of-Integers/Strings/Variables:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Types of Integers/Strings/Variables:<a class="anchor-link" href="#Types-of-Integers/Strings/Variables:"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> 
+
+<span class="c1"># type string</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">"Vardaan Sinha"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Name:"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="c1"># type integer</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Age:"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
+
+<span class="c1"># float variable</span>
+<span class="n">apelgrade</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"APEL Grade:"</span><span class="p">,</span> <span class="n">apelgrade</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">apelgrade</span><span class="p">))</span>
+
+<span class="c1"># type list</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"AP Physics"</span><span class="p">,</span> <span class="s2">"AP Stats"</span><span class="p">,</span> <span class="s2">"AP CSP"</span><span class="p">,</span> <span class="s2">"APEL"</span><span class="p">,</span> <span class="s2">"US History"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Classes:"</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">classes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Period 3 Class:"</span><span class="p">,</span> <span class="n">classes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">classes</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+
+<span class="c1"># reversed list</span>
+<span class="n">langs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"C"</span><span class="p">,</span> <span class="s2">"Python"</span><span class="p">,</span> <span class="s2">"Java"</span><span class="p">,</span> <span class="s2">"HTML"</span><span class="p">,</span> <span class="s2">"JavaScript"</span><span class="p">]</span>
+<span class="n">langs</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Reversed Langs:'</span><span class="p">),</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">langs</span><span class="p">))</span>
+
+<span class="c1"># randomized order with random module</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Random Class Order:'</span><span class="p">),</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">classes</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Name: Vardaan Sinha &lt;class 'str'&gt;
+Age: 15 &lt;class 'int'&gt;
+APEL Grade: 75 &lt;class 'int'&gt;
+Classes: ['AP Physics', 'AP Stats', 'AP CSP', 'APEL', 'US History'] &lt;class 'list'&gt;
+Period 3 Class: AP CSP &lt;class 'str'&gt;
+
+Reversed Langs:
+JavaScript, HTML, Java, Python, C
+
+Random Class Order:
+AP CSP, US History, AP Stats, APEL, AP Physics
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="InfoDb-Demonstration:">
+<a class="anchor" href="#InfoDb-Demonstration:" aria-hidden="true"><span class="octicon octicon-link"></span></a>InfoDb Demonstration:<a class="anchor-link" href="#InfoDb-Demonstration:"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">InfoDb</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># first dictionary value</span>
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"FirstName"</span><span class="p">:</span> <span class="s2">"Samit"</span><span class="p">,</span>
+    <span class="s2">"LastName"</span><span class="p">:</span> <span class="s2">"Poojary"</span><span class="p">,</span>
+    <span class="s2">"DOB"</span><span class="p">:</span> <span class="s2">"February 24th, 2006"</span><span class="p">,</span>
+    <span class="s2">"Email"</span><span class="p">:</span> <span class="s2">"samitpoojary@gmail.com"</span><span class="p">,</span>
+    <span class="s2">"Height"</span><span class="p">:</span> <span class="s2">"5'7"</span><span class="p">,</span>
+    <span class="s2">"Hobbies"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Playing Soccer"</span><span class="p">,</span> <span class="s2">"Fantasy Football"</span><span class="p">,</span> <span class="s2">"Programming"</span><span class="p">]</span>
+    
+<span class="p">})</span>
+
+<span class="c1"># adding second dictionary value</span>
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"FirstName"</span><span class="p">:</span> <span class="s2">"Akshat"</span><span class="p">,</span>
+    <span class="s2">"LastName"</span><span class="p">:</span> <span class="s2">"Parikh"</span><span class="p">,</span>
+    <span class="s2">"DOB"</span><span class="p">:</span> <span class="s2">"December 28th, 2005"</span><span class="p">,</span>
+    <span class="s2">"Email"</span><span class="p">:</span> <span class="s2">"akshat1228@gmail.com"</span><span class="p">,</span>
+    <span class="s2">"Height"</span><span class="p">:</span> <span class="s2">"6'"</span><span class="p">,</span>
+    <span class="s2">"Hobbies"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Playing Basketball"</span><span class="p">,</span> <span class="s2">"Trading"</span><span class="p">,</span> <span class="s2">"Programming"</span><span class="p">]</span>
+    
+<span class="p">})</span>
+
+
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[{'FirstName': 'Samit', 'LastName': 'Poojary', 'DOB': 'February 24th, 2006', 'Email': 'samitpoojary@gmail.com', 'Height': "5'7", 'Hobbies': ['Playing Soccer', 'Fantasy Football', 'Programming']}, {'FirstName': 'Akshat', 'LastName': 'Parikh', 'DOB': 'December 28th, 2005', 'Email': 'akshat1228@gmail.com', 'Height': "6'", 'Hobbies': ['Playing Basketball', 'Trading', 'Programming']}]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Printing-InfoDb-Data:">
+<a class="anchor" href="#Printing-InfoDb-Data:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Printing InfoDb Data:<a class="anchor-link" href="#Printing-InfoDb-Data:"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="n">homie</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Name:"</span><span class="p">,</span> <span class="n">homie</span><span class="p">[</span><span class="s2">"FirstName"</span><span class="p">],</span> <span class="n">homie</span><span class="p">[</span><span class="s2">"LastName"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Birthday:"</span><span class="p">,</span> <span class="n">homie</span><span class="p">[</span><span class="s2">"DOB"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Email:"</span><span class="p">,</span> <span class="n">homie</span><span class="p">[</span><span class="s2">"Email"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Height:"</span><span class="p">,</span> <span class="n">homie</span><span class="p">[</span><span class="s2">"Height"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hobbies:"</span><span class="p">,</span> <span class="n">homie</span><span class="p">[</span><span class="s2">"Hobbies"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># This prints the data for the SECOND dictionary value, as Python always starts from 0 instead of 1. </span>
+<span class="n">print_data</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Name: Akshat Parikh
+Birthday: December 28th, 2005
+Email: akshat1228@gmail.com
+Height: 6'
+Hobbies: ['Playing Basketball', 'Trading', 'Programming']
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Loops:">
+<a class="anchor" href="#Loops:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loops:<a class="anchor-link" href="#Loops:"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">for_loop</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">homie</span> <span class="ow">in</span> <span class="n">InfoDb</span><span class="p">:</span>
+        <span class="n">print_data</span><span class="p">(</span><span class="n">homie</span><span class="p">)</span>
+<span class="c1"># Prints the data from InfoDb based on the index falling in the specified range.</span>
+<span class="k">def</span> <span class="nf">indexed_for_loop</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"For Loop</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">)):</span>
+        <span class="n">print_data</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">for_loop</span><span class="p">()</span>
+<span class="n">indexed_for_loop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Name: Samit Poojary
+Birthday: February 24th, 2006
+Email: samitpoojary@gmail.com
+Height: 5'7
+Hobbies: ['Playing Soccer', 'Fantasy Football', 'Programming']
+
+Name: Akshat Parikh
+Birthday: December 28th, 2005
+Email: akshat1228@gmail.com
+Height: 6'
+Hobbies: ['Playing Basketball', 'Trading', 'Programming']
+
+For Loop
+
+Name: Samit Poojary
+Birthday: February 24th, 2006
+Email: samitpoojary@gmail.com
+Height: 5'7
+Hobbies: ['Playing Soccer', 'Fantasy Football', 'Programming']
+
+Name: Akshat Parikh
+Birthday: December 28th, 2005
+Email: akshat1228@gmail.com
+Height: 6'
+Hobbies: ['Playing Basketball', 'Trading', 'Programming']
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="While-Loops:">
+<a class="anchor" href="#While-Loops:" aria-hidden="true"><span class="octicon octicon-link"></span></a>While Loops:<a class="anchor-link" href="#While-Loops:"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">while_loops</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">):</span>
+        <span class="n">print_data</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"While Loop</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">while_loops</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>While Loop
+
+Name: Samit Poojary
+Birthday: February 24th, 2006
+Email: samitpoojary@gmail.com
+Height: 5'7
+Hobbies: ['Playing Soccer', 'Fantasy Football', 'Programming']
+
+Name: Akshat Parikh
+Birthday: December 28th, 2005
+Email: akshat1228@gmail.com
+Height: 6'
+Hobbies: ['Playing Basketball', 'Trading', 'Programming']
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Recursive-Loops:">
+<a class="anchor" href="#Recursive-Loops:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recursive Loops:<a class="anchor-link" href="#Recursive-Loops:"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">recursive</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">):</span>
+        <span class="k">return</span>
+    <span class="n">print_data</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">recursive</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">recursive</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Name: Akshat Parikh
+Birthday: December 28th, 2005
+Email: akshat1228@gmail.com
+Height: 6'
+Hobbies: ['Playing Basketball', 'Trading', 'Programming']
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Dictionary-Quiz:">
+<a class="anchor" href="#Dictionary-Quiz:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dictionary Quiz:<a class="anchor-link" href="#Dictionary-Quiz:"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span> 
+
+<span class="n">questions</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"This is a Python-centric quiz that will allow you to test your knowledge of the AP CSP content thus far."</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">question_answer</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Question: "</span> <span class="o">+</span> <span class="n">q</span><span class="p">)</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Answer: "</span> <span class="o">+</span> <span class="n">resp</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">resp</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Correct!"</span><span class="p">)</span>
+        <span class="k">global</span> <span class="n">correct</span>
+        <span class="n">correct</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect!"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">resp</span>
+
+<span class="n">q1</span> <span class="o">=</span> <span class="n">question_answer</span><span class="p">(</span><span class="s2">"Which type of loop is used to call repeatedly?"</span><span class="p">,</span> <span class="s2">"recursive"</span><span class="p">)</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">question_answer</span><span class="p">(</span><span class="s2">"A Python ___ stores associated keys and values."</span><span class="p">,</span> <span class="s2">"dictionary"</span><span class="p">)</span>
+<span class="n">q3</span> <span class="o">=</span> <span class="n">question_answer</span><span class="p">(</span><span class="s2">"What type of variable can contain numbers with 'floating' decimal values?"</span><span class="p">,</span> <span class="s2">"float"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">correct</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'You got only </span><span class="si">{</span><span class="n">correct</span><span class="si">}</span><span class="s1">/3 correct.'</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" That's a "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">correct</span> <span class="o">/</span> <span class="n">questions</span><span class="p">)</span><span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">+</span> <span class="s2">"%"</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"The answers in order were 'recursive', 'dictionary', and 'float' for next time."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Great job! You got a 100%.'</span><span class="p">)</span>
+
+<span class="c1"># DICTIONARY COMPONENT</span>
+
+<span class="n">PyQuiz</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Q1"</span><span class="p">:</span> <span class="n">q1</span><span class="p">,</span>
+    <span class="s2">"Q2"</span><span class="p">:</span> <span class="n">q2</span><span class="p">,</span>
+    <span class="s2">"Q3"</span><span class="p">:</span> <span class="n">q3</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Your recorded answers for review:"</span><span class="p">,</span> <span class="n">PyQuiz</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This is a Python-centric quiz that will allow you to test your knowledge of the AP CSP content thus far.
+Question: Which type of loop is used to call repeatedly?
+Answer: while
+Incorrect!
+Question: A Python ___ stores associated keys and values.
+Answer: dictionary
+Correct!
+Question: What type of variable can contain numbers with 'floating' decimal values?
+Answer: float
+Correct!
+You got only 2/3 correct.
+vardaan That's a 66.66666666666666%
+The answers in order were 'recursive', 'dictionary', and 'float' for next time.
+Your recorded answers for review: {'Q1': 'while', 'Q2': 'dictionary', 'Q3': 'float'}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="vardaansinha/FastPages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/FastPages/jupyter/python/2022/09/05/listsdictionaries.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/FastPages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/FastPages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/FastPages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/FastPages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/FastPages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
