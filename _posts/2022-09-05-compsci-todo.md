@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: My future tasks to update my FastPages site.
 categories: [markdown,school]
-title: Future FastPages plans
+title: Future FastPages Plans
 ---
 
 There are quite a few things that I hope to do on my FastPages site in the upcoming week:
