@@ -425,9 +425,9 @@ pre code { font-size: 15px !important; }
 
 .youtube-iframe-wrapper iframe, .youtube-iframe-wrapper object, .youtube-iframe-wrapper embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-html, input, textarea, select, button { color: white !important; background-color: #33b5ff !important; }
+html, input, textarea, select, button { color: black !important; background-color: #33b5ff !important; }
 
-body { color: white !important; background-color: #33b5ff !important; cursor: url("/images/pointer.png"), pointer; }
+body { color: black !important; background-color: #33b5ff !important; cursor: url("/images/pointer.png"), pointer; }
 
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
