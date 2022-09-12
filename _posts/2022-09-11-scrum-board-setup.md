@@ -15,3 +15,4 @@ For this week, I added three total issues that I need to work on.
 
 ![]({{site.baseurl}}/images/ScrumBoard.png "A quick look at my current ScrumBoard issues.")
 
+i love pp
