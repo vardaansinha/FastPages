@@ -14,5 +14,3 @@ For this week, I added three total issues that I need to work on.
 <a href = "https://vardaansinha.atlassian.net/jira/software/projects/VACSB/boards/1">My ScrumBoard Issues!</a>
 
 ![]({{site.baseurl}}/images/ScrumBoard.png "A quick look at my current ScrumBoard issues.")
-
-i love pp
