@@ -31,3 +31,6 @@ Everyone in the group (Samit, Akshat, David, and myself) are all passionate abou
 Our group is setup with diversity in our backgrounds and perspectives, but there is no diversity in our gender (we are all men).
 
 Our group is best equipped for the skill sets needed for success in the classroom, as we are familiar with computer science and are always looking forward to new learning each week.
+
+![]({{site.baseurl}}/images/collaborationquiz.png "The CollegeBoard collaboration quiz.")
+
