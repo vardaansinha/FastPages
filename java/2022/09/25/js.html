@@ -96,21 +96,19 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-</ul><p><button name="cut" onclick="randomSelect()">WHO DO I CUT?</button>
+</ul><p><button name="button" onclick="randomSelect()">Click For Random Song</button>
 <br>
-<a id="ROSTER CUT" href="#">Player Here</a></p>
-
+<a id="Song Selector" href="#">Song Will Appear Here</a>
 <script>
-const playerRoster = ["https://www.patriots.com/team/players-roster/mac-jones/", "https://www.patriots.com/team/players-roster/kendrick-bourne/", "https://www.patriots.com/team/players-roster/jonnu-smith/", "https://www.patriots.com/team/players-roster/hunter-henry/"]
-const playerNameList = ["Mac Jones", "Kendrick Bourne", "Jonnu Smith", "Hunter Henry"]
+const songList = ["https://open.spotify.com/track/39az7WzBipIvzCCTfpwtGa?si=5a3535af908f4640", "https://open.spotify.com/track/7d4W06sKxGEm40rYdQgEtt?si=12d41809294443a0", "https://open.spotify.com/track/0p7qrH9BepbFOukVfgzLu7?si=17941606f91b4fad", "https://open.spotify.com/track/21Qsj3cMVCx2xF2EVVNbEu?si=46626ccac8f34e90", "https://open.spotify.com/track/29tzJGvqJPTAFs6LXmsHoA?si=f4b93105aebb455f", "https://open.spotify.com/track/2nZ33CKRbgpJQJJQKHuGXb?si=d41c2a9440fd4202"]
+const songNameList = ["The Age of The Understatement", "Standing Next To Me", "Calm Like You", "Fell In Love With a Girl", "R U Mine?", "Plastic Beach"]
 function randomSelect() {
-    var index=Math.floor(Math.random() *playerRoster.length)
-    document.getElementById("Roster Cut").innerHTML = playerNameList[index]
-    document.getElementById("Roster Cut").href = playerRoster[index]
-}
+    var index=Math.floor(Math.random() *songList.length)
+    document.getElementById("Song Selector").innerHTML = songNameList[index]
+    document.getElementById("Song Selector").href = songList[index]
+}</script></p>
 
-</script>
-
+<p>&lt;/script&gt;</p>
 
   </div><a class="u-url" href="/FastPages/java/2022/09/25/js.html" hidden></a>
 </article>
