@@ -427,7 +427,7 @@ pre code { font-size: 15px !important; }
 
 html, input, textarea, select, button { color: black !important; background-color: #33b5ff !important; }
 
-body { color: black !important; background-color: #33b5ff !important; cursor: url("/images/pointer.png"), pointer; }
+body { color: black !important; background-color: #33b5ff !important; }
 
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/

@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "JavaScript Usage",
-            "content": "// This utilizes JavaScript to print a message using the &quot;console.log&quot; feature. console.log(&quot;TEST RUN&quot;) .",
-            "url": "https://vardaansinha.github.io/FastPages/jupyter/js/2022/09/25/javascript.html",
-            "relUrl": "/jupyter/js/2022/09/25/javascript.html",
+            "title": "Roster Cutter from JavaScript",
+            "content": "Explanation of the program in the cell below . WHO DO I CUT? . New England Player Name .",
+            "url": "https://vardaansinha.github.io/FastPages/java/2022/09/25/js.html",
+            "relUrl": "/java/2022/09/25/js.html",
             "date": " • Sep 25, 2022"
         }
         
