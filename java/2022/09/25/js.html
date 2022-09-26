@@ -98,16 +98,19 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 </ul><p><button name="cut" onclick="randomSelect()">WHO DO I CUT?</button>
 <br>
-<a id="ROSTER CUT" href="#">Player Here</a>
+<a id="ROSTER CUT" href="#">Player Here</a></p>
+
 <script>
-const playerRoster = ["https://www.patriots.com/team/players-roster/"]
-const playerNameList = ["Mac Jones", "Kendrick Bourne", "Jonnu Smith", "Hunter Henry", "Matthew Judon", "Deatrich Wise Jr.", "Nick Folk", "DeVante Parker", "Damien Harris", "Rhamondre Stevenson"]
+const playerRoster = ["https://www.patriots.com/team/players-roster/mac-jones/", "https://www.patriots.com/team/players-roster/kendrick-bourne/", "https://www.patriots.com/team/players-roster/jonnu-smith/", "https://www.patriots.com/team/players-roster/hunter-henry/"]
+const playerNameList = ["Mac Jones", "Kendrick Bourne", "Jonnu Smith", "Hunter Henry"]
 function randomSelect() {
     var index=Math.floor(Math.random() *playerRoster.length)
     document.getElementById("Roster Cut").innerHTML = playerNameList[index]
     document.getElementById("Roster Cut").href = playerRoster[index]
 }
-</script></p>
+
+</script>
+
 
   </div><a class="u-url" href="/FastPages/java/2022/09/25/js.html" hidden></a>
 </article>
