@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>LaLiga Player Generator | Vardaan’s FastPages</title>
+<title>Roster Cut Tool (JS) | Vardaan’s FastPages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="LaLiga Player Generator" />
+<meta property="og:title" content="Roster Cut Tool (JS)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A Js algorithm that generates Real Madrid player names and profile" />
-<meta property="og:description" content="A Js algorithm that generates Real Madrid player names and profile" />
+<meta name="description" content="An algorithm to gather you information on which New England Patriots Player to cut from the roster." />
+<meta property="og:description" content="An algorithm to gather you information on which New England Patriots Player to cut from the roster." />
 <link rel="canonical" href="https://vardaansinha.github.io/FastPages/java/markdown/2022/09/25/js.html" />
 <meta property="og:url" content="https://vardaansinha.github.io/FastPages/java/markdown/2022/09/25/js.html" />
 <meta property="og:site_name" content="Vardaan’s FastPages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-09-25T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="LaLiga Player Generator" />
+<meta property="twitter:title" content="Roster Cut Tool (JS)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-25T00:00:00-05:00","datePublished":"2022-09-25T00:00:00-05:00","description":"A Js algorithm that generates Real Madrid player names and profile","headline":"LaLiga Player Generator","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/FastPages/java/markdown/2022/09/25/js.html"},"url":"https://vardaansinha.github.io/FastPages/java/markdown/2022/09/25/js.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-25T00:00:00-05:00","datePublished":"2022-09-25T00:00:00-05:00","description":"An algorithm to gather you information on which New England Patriots Player to cut from the roster.","headline":"Roster Cut Tool (JS)","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/FastPages/java/markdown/2022/09/25/js.html"},"url":"https://vardaansinha.github.io/FastPages/java/markdown/2022/09/25/js.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/FastPages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://vardaansinha.github.io/FastPages/feed.xml" title="Vardaan's FastPages" /><link rel="shortcut icon" type="image/x-icon" href="/FastPages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,7 +73,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">LaLiga Player Generator</h1><p class="page-description">A Js algorithm that generates Real Madrid player names and profile</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-25T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Roster Cut Tool (JS)</h1><p class="page-description">An algorithm to gather you information on which New England Patriots Player to cut from the roster.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-25T00:00:00-05:00" itemprop="datePublished">
         Sep 25, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -98,21 +98,21 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h1 id="testing-programs-functionality">Testing Program’s Functionality</h1>
+    <h1 id="program-explanation">Program Explanation</h1>
 <ul>
-  <li>This js-encoded algorithm randomly selects a player from Real Madrid, a European soccer team, and then gives you a clickable link to view their statistical profile.</li>
+  <li>Every season, each NFL team has to make a series of roster cuts in order to finalize a 53-man roster. With this tool, JavaScript was used to select a random player to cut, making it easier for the Patriots managers.</li>
 </ul>
 
 <p><button name="button" onclick="randomSelect()">Click For New England Player</button>
 <br />
-<a id="Madrid Selector" href="#">Player Will Appear Here</a>
+<a id="Patriots Selector" href="#">Player Will Appear Here</a>
 <script>
 const playerList = ["https://www.patriots.com/team/players-roster/mac-jones", "https://www.patriots.com/team/players-roster/kendrick-bourne", "https://www.patriots.com/team/players-roster/christian-barmore", "https://www.patriots.com/team/players-roster/kyle-dugger", "https://www.patriots.com/team/players-roster/hunter-henry", "https://www.patriots.com/team/players-roster/jalen-mills"]
 const playerNameList = ["Mac", "Kendrick", "Barmore", "Dugger", "Hunter", "Jalen"]
 function randomSelect() {
     var index=Math.floor(Math.random() *playerList.length)
-    document.getElementById("Madrid Selector").innerHTML = playerNameList[index]
-    document.getElementById("Madrid Selector").href = playerList[index]
+    document.getElementById("Patriots Selector").innerHTML = playerNameList[index]
+    document.getElementById("Patriots Selector").href = playerList[index]
 }</script></p>
 
 <p>&lt;/script&gt;</p>

@@ -2,8 +2,8 @@
   
     
         "post0": {
-            "title": "LaLiga Player Generator",
-            "content": "Testing Program’s Functionality . This js-encoded algorithm randomly selects a player from Real Madrid, a European soccer team, and then gives you a clickable link to view their statistical profile. | . Click For New England Player Player Will Appear Here . &lt;/script&gt; .",
+            "title": "Roster Cut Tool (JS)",
+            "content": "Program Explanation . Every season, each NFL team has to make a series of roster cuts in order to finalize a 53-man roster. With this tool, JavaScript was used to select a random player to cut, making it easier for the Patriots managers. | . Click For New England Player Player Will Appear Here . &lt;/script&gt; .",
             "url": "https://vardaansinha.github.io/FastPages/java/markdown/2022/09/25/js.html",
             "relUrl": "/java/markdown/2022/09/25/js.html",
             "date": " • Sep 25, 2022"
