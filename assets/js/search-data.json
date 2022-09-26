@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Applied JavaScript Usage",
-            "content": "// This utilizes JavaScript to print a message using the &quot;console.log&quot; feature. console.log(&quot;TEST RUN&quot;) . This is my use of JavaScript Kernel! .",
-            "url": "https://vardaansinha.github.io/FastPages/jupyter/java/2022/09/25/javascript.html",
-            "relUrl": "/jupyter/java/2022/09/25/javascript.html",
+            "title": "JavaScript Usage",
+            "content": "// This utilizes JavaScript to print a message using the &quot;console.log&quot; feature. console.log(&quot;TEST RUN&quot;) .",
+            "url": "https://vardaansinha.github.io/FastPages/jupyter/js/2022/09/25/javascript.html",
+            "relUrl": "/jupyter/js/2022/09/25/javascript.html",
             "date": " • Sep 25, 2022"
         }
         
