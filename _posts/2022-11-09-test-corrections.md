@@ -35,3 +35,10 @@ Question 43:
 Explanation:
 
 A simple misinterpretation of the question here; I put 6, since that is the value of *x* after the code is ran, not the result. The result would be the sum from 0 to 5, (5 + 4 + 3 + 2 + 1 + 0), or 15 in option **C**.
+
+
+**Reflection**:
+
+My strengths included the binary questions and some of the simple if/else statements and the code execution programs. 
+
+Some of my difficulties included the multi-step code execution questions, but I will improve on this throughout the year.
