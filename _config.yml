@@ -36,12 +36,8 @@ url: "https://vardaansinha.github.io" # the base hostname & protocol for your si
 #
 baseurl: "/FastPages" # the subpath of your site, e.g. "/blog".
 
-# Github and twitter are optional:
-minima:
-  social_links:
-    github: vardaansinha
-    
 
+    
 # Set this to true to get LaTeX math equation support
 use_math: 
 
