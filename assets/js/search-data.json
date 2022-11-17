@@ -341,6 +341,17 @@
         
     
   
+    
+        ,"post31": {
+            "title": "Binary Math",
+            "content": "Binary Math with Conversions . Plus Binary Octal Hexadecimal Decimal Minus . +1 | 00000000 | 0 | 0 | 0 | -1 | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | .",
+            "url": "https://vardaansinha.github.io/FastPages/frontend/binary",
+            "relUrl": "/frontend/binary",
+            "date": " • Jul 7, 2022"
+        }
+        
+    
+  
 
   
   
@@ -397,6 +408,9 @@
   
 
   
+  
+
+  
 
   
 
@@ -404,7 +418,7 @@
   
 
   
-      ,"page14": {
+      ,"page15": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://vardaansinha.github.io/FastPages/robots.txt",
