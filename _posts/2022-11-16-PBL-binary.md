@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
 categories: [html, liquid, javascript]
-title: Binary Math Hacks (8 BITS)
+title: Binary Math Hacks
 ---
 
 <!-- Hack 1: add a character display to text when 8 bits, determine if printable or not printable -->
@@ -25,6 +25,8 @@ title: Binary Math Hacks (8 BITS)
                 <th>Octal</th>
                 <th>Hexadecimal</th>
                 <th>Decimal</th>
+                <th>Bits</th>
+                <th>Character</th>
                 <th>Minus</th>
             </tr>
             <tr>
@@ -33,6 +35,8 @@ title: Binary Math Hacks (8 BITS)
                 <td id="octal">0</td>
                 <td id="hexadecimal">0</td>
                 <td id="decimal">0</td>
+                <td id="bits">{{BITS}}</td>
+                <td id="character">EMPTY</td>
                 <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
             </tr>
             </table>
@@ -61,18 +65,6 @@ title: Binary Math Hacks (8 BITS)
 </div>
 
 <script>
-    $(document).ready(function(){
-
-        var value = $('.decimal').text();
-  
-        value = parseFloat(value.replace(',','.'))
-  
-        if(value>255) alert('Exceeds 8 bits.')
-    })
-
-</script>
-
-<script>
     const BITS = {{ BITS }};
     const MAX = 2 ** BITS - 1;
     const MSG_ON = "Turn on";
@@ -97,6 +89,7 @@ title: Binary Math Hacks (8 BITS)
         document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
         // Decimal conversion
         document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString();
+        document.getElementById('character').innerHTML = binToChar(binary);
     }
     //
     function decimal_2_base(decimal, base) {
@@ -162,5 +155,11 @@ title: Binary Math Hacks (8 BITS)
             document.getElementById('butt' + i).innerHTML = MSG_ON;
         }
         }
+    }
+    function binToChar(bin) {
+        let dec = parseInt(bin, 2).toString();
+        console.log(dec);
+        var chr = String.fromCharCode(dec);
+        return chr;
     }
 </script>
