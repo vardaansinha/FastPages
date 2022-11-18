@@ -163,3 +163,7 @@ title: Binary Math Hacks
         return chr;
     }
 </script>
+
+<br>
+
+<p>To generate the ASCII characters above when changing the binary string, we are using JavaScript. The code essentially first converts the binary string into an integer string. Then, a variable "chr" (for character) is defined and the line uses the String.fromCharCode function to convert the integer ASCII code into a readable character as shown above.</p>
