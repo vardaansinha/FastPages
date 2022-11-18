@@ -61,6 +61,9 @@ title: Binary Math Hacks (8 BITS)
 </div>
 
 <script>
+    if 
+
+<script>
     const BITS = {{ BITS }};
     const MAX = 2 ** BITS - 1;
     const MSG_ON = "Turn on";
