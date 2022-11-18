@@ -61,7 +61,16 @@ title: Binary Math Hacks (8 BITS)
 </div>
 
 <script>
-    if 
+    $(document).ready(function(){
+
+        var value = $('.decimal').text();
+  
+        value = parseFloat(value.replace(',','.'))
+  
+        if(value>255) alert('Exceeds 8 bits.')
+    })
+
+</script>
 
 <script>
     const BITS = {{ BITS }};
