@@ -101,3 +101,34 @@ no changes added to commit (use "git add" and/or "git commit -a") # This command
 
 19. **Network Layer**: The wireless and physical layers that move bits across the Internet.
 
+# Unit 2 Binary Vocab
+
+**Bits**: A bit can have only two states, on or off, which are commonly represented as ones and zeros. In our binary markdown we used to change the number of bits.
+
+**Bytes**: Eight bits put together is known as a byte. A byte consists of 256 different combinations if you include the number 00000000 — all the binary numbers between 00000000 and 11111111.
+
+**HEX**: Hexadecimal is base 16. It can be used to represent large numbers with fewer digits. In this system there are 16 symbols or possible digit values from 0 to 9, followed by six alphabetic characters – A, B, C, D, E and F. For example, when we use Javascript to change the color of the background on our blogs, we use hexadecimals like #eb4034, which would give us a red color.
+
+
+**Boolean**: Basically binary, either true or false value
+
+# Unit 3 Vocab
+
+
+**Data Types**: The type of data; integer, string, float, boolean, lists, dictionaries, arrays, etc.
+
+**Lists**: Lists are used to store multiple items in a single variable.
+
+**Dictionary**: A dictionary consists of a collection of key-value pairs. Each key-value pair maps the key to its associated value.
+
+**Algorithm**: Finite set of instructions that accomplish a specific task, composed of sequencing, selection, and iteration.
+
+**Sequence**: A code snippet type that is run only based on a conditional.
+
+# TYPES OF LOOPS: 
+
+**For Loop**: This loop repeats for a set number of times; I is the number of times repeated. With the for loop we can execute a set of statements, once for each item in a list, tuple, set etc.
+
+**While Loop**: While loops are used to repeat a section of code an unknown number of times until a specific condition is met. A while loop will execute a set of statements as long as a condition is true.
+
+Recursive Loop: TBD
