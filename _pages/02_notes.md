@@ -131,4 +131,24 @@ no changes added to commit (use "git add" and/or "git commit -a") # This command
 
 **While Loop**: While loops are used to repeat a section of code an unknown number of times until a specific condition is met. A while loop will execute a set of statements as long as a condition is true.
 
-Recursive Loop: TBD
+# Extra Vocab:
+
+**STRING**: A "string" of characters
+
+**Concatenation**: This is where there is a combination of 2+ strings into a singular string.
+
+**Length**: This function allows you to count the number of characters in the called string.
+
+**Substring**: A partial snippet of an original string.
+
+**Upper Method**: The upper() method returns the uppercase string from the given string. 
+
+**Lower Method**: The lower() method returns the lowercase string from the given string.
+
+**Comparison Operators**: These are logical operators which allow for boolean outputs to be compared (hence the name). 
+
+**Truth Table**: A truth table is a way of checking circuitry logic. It goes through a series of conditions and then decides the output based on that. 
+
+**If Statement**: Conditional Statement
+
+**If Else Statement**: This will check a statement REGARDLESS, but the statement which is run depends on the if expression is met or not.
