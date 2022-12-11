@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: Extra Research: Sections 9-11
+description: Extra Research Sections 9-11
 categories: [markdown]
-title: Extra Research: Sections 9-11
+title: Extra Research Sections 9-11
 ---
 
 Based on some additional research on the binary searching algorithm, I found out that this method is used in many other different programming languages as well, not JUST Python.
