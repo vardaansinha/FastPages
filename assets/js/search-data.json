@@ -2,21 +2,21 @@
   
     
         "post0": {
-            "title": "Sections 9-11 Hacks",
-            "content": "Hack #1 . if (isCold or isRaining) { stayInside &lt;-- True } else { stayInside &lt;-- False } . Hack #2 . import random # This is necessary, as this program is supposed to utilize a random number generator to select a random number from 1 to 10. attemptCount = [] i = 1 # Initial attempt count while i &lt;= 4: attemptCount.append(random.randint(1,10)) i = i + 1 print(&quot;Attempts: &quot;, attemptCount) print(&quot;&quot;) print(&quot;Your FINAL score is:&quot;, max(attemptCount)) . Attempts: [6, 9, 4, 5] Your FINAL score is: 9 . Hack #3 . { if MoveForwardPossible { moveForward } elif { MoveRightPossible { moveRight } } elif { MoveLeftPossible { moveLeft } } } . Hack #4 .",
-            "url": "https://vardaansinha.github.io/FastPages/jupyter/2022/12/09/group5hacks.html",
-            "relUrl": "/jupyter/2022/12/09/group5hacks.html",
-            "date": " • Dec 9, 2022"
+            "title": "Unit 3 Sections 8-10 Hacks",
+            "content": "Exercise #1: . list = [1,2,3,4,5] list.reverse() print(list) newlist = list.reverse() print(newlist) . [5, 4, 3, 2, 1] None . Exercise #2: . list = [9,8,4,3,5,2,6,7,1,0] def bubbleSort(list): n = len(list) for i in range(n): for j in range (0, len(list) - i - 1): if list[j] &gt; list[j+1]: value = list[j] list[j] = list[j+1] list[j+1] = value bubbleSort(list) print(list) . [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] .",
+            "url": "https://vardaansinha.github.io/FastPages/csp/2022/12/10/.html",
+            "relUrl": "/csp/2022/12/10/.html",
+            "date": " • Dec 10, 2022"
         }
         
     
   
     
         ,"post1": {
-            "title": "Unit 3 Sections 8-10 Hacks",
-            "content": "Exercise #1: . list = [1,2,3,4,5] list.reverse() print(list) newlist = list.reverse() print(newlist) . [5, 4, 3, 2, 1] None . Exercise #2: . list = [9,8,4,3,5,2,6,7,1,0] def bubbleSort(list): n = len(list) for i in range(n): for j in range (0, len(list) - i - 1): if list[j] &gt; list[j+1]: value = list[j] list[j] = list[j+1] list[j+1] = value bubbleSort(list) print(list) . [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] .",
-            "url": "https://vardaansinha.github.io/FastPages/csp/2022/12/09/.html",
-            "relUrl": "/csp/2022/12/09/.html",
+            "title": "Sections 9-11 Hacks",
+            "content": "Hack #1 . if (isCold or isRaining) { stayInside &lt;-- True } else { stayInside &lt;-- False } . Hack #2 . import random # This is necessary, as this program is supposed to utilize a random number generator to select a random number from 1 to 10. attemptCount = [] i = 1 # Initial attempt count while i &lt;= 4: attemptCount.append(random.randint(1,10)) i = i + 1 print(&quot;Attempts: &quot;, attemptCount) print(&quot;&quot;) print(&quot;Your FINAL score is:&quot;, max(attemptCount)) . Attempts: [6, 9, 4, 5] Your FINAL score is: 9 . Hack #3 . { if MoveForwardPossible { moveForward } elif { MoveRightPossible { moveRight } } elif { MoveLeftPossible { moveLeft } } } . Hack #4 .",
+            "url": "https://vardaansinha.github.io/FastPages/jupyter/2022/12/09/group5hacks.html",
+            "relUrl": "/jupyter/2022/12/09/group5hacks.html",
             "date": " • Dec 9, 2022"
         }
         
