@@ -101,54 +101,95 @@ no changes added to commit (use "git add" and/or "git commit -a") # This command
 
 19. **Network Layer**: The wireless and physical layers that move bits across the Internet.
 
-# Unit 2 Binary Vocab
+# Unit 2 Vocabulary:
 
-**Bits**: A bit can have only two states, on or off, which are commonly represented as ones and zeros. In our binary markdown we used to change the number of bits.
+1. **Bits**: A bit is a binary digit. It is the smallest size of data.
 
-**Bytes**: Eight bits put together is known as a byte. A byte consists of 256 different combinations if you include the number 00000000 — all the binary numbers between 00000000 and 11111111.
+2. **Bytes**: Bytes are groups of bits.
 
-**HEX**: Hexadecimal is base 16. It can be used to represent large numbers with fewer digits. In this system there are 16 symbols or possible digit values from 0 to 9, followed by six alphabetic characters – A, B, C, D, E and F. For example, when we use Javascript to change the color of the background on our blogs, we use hexadecimals like #eb4034, which would give us a red color.
+3. **Hexadecimal**: Hex is base 16, and is used to show large values with a fewer amount of digits.  
 
+4. **Unsigned Integer**: These are integers that don't have any associated + or -.
 
-**Boolean**: Basically binary, either true or false value
+5. **Signed Integer**: These are integers with some sort of directionality (+ or -).
 
-# Unit 3 Vocab
+6. **Floating Point**: These are decimals.
 
+7. **Boolean**: Boolean is a binary variable; can either be true or false.
 
-**Data Types**: The type of data; integer, string, float, boolean, lists, dictionaries, arrays, etc.
+8. **ASCII**: This is a format of character encoding for text on the Internet. 
 
-**Lists**: Lists are used to store multiple items in a single variable.
+9. **Unicode**: A character encoding standard that assigns a unique number for each character in almost every language.
 
-**Dictionary**: A dictionary consists of a collection of key-value pairs. Each key-value pair maps the key to its associated value.
+10. **RGB**: This is used to represent colors on a system display.
 
-**Algorithm**: Finite set of instructions that accomplish a specific task, composed of sequencing, selection, and iteration.
+11. *Lossy* and *lossless* have not been discussed yet.
 
-**Sequence**: A code snippet type that is run only based on a conditional.
+# Unit 3 Vocabulary:
 
-# TYPES OF LOOPS: 
+1. **Variables**: Any sort of quantity which can be defined or measured.
 
-**For Loop**: This loop repeats for a set number of times; I is the number of times repeated. With the for loop we can execute a set of statements, once for each item in a list, tuple, set etc.
+2. **Data Types**: These are types of data values.
 
-**While Loop**: While loops are used to repeat a section of code an unknown number of times until a specific condition is met. A while loop will execute a set of statements as long as a condition is true.
+3. **Assignment Operators**: These are operators which assign values to variables.
 
-# Extra Vocab:
+4. **Lists**: These are data types that have a number of ordered values. 
 
-**STRING**: A "string" of characters
+5. **2D Lists**: This is a 2D data structure which can represent a matrix.
 
-**Concatenation**: This is where there is a combination of 2+ strings into a singular string.
+6. **Dictionaries**: These are a method to store data values through a method known as keys and pairs.
 
-**Length**: This function allows you to count the number of characters in the called string.
+7. **Class**: A class contains all the details about a collection of variables and functions.
 
-**Substring**: A partial snippet of an original string.
+8. **Algorithms**: Algorithms are processes which can help to solve certain problems through programming.
 
-**Upper Method**: The upper() method returns the uppercase string from the given string. 
+9. **Sequence**: A sequence is an ordered set.
 
-**Lower Method**: The lower() method returns the lowercase string from the given string.
+10. **Selection**: This selects a certain part of a program to execute based on conditional statements.
 
-**Comparison Operators**: These are logical operators which allow for boolean outputs to be compared (hence the name). 
+11. **Iteration**: This is where the same group of code is repeatedly executed.
 
-**Truth Table**: A truth table is a way of checking circuitry logic. It goes through a series of conditions and then decides the output based on that. 
+12. **Expressions**: These are a combination of operators and data values.
 
-**If Statement**: Conditional Statement
+13. **Comparison Operators**: This compares the two values and then tells the user whether the condition is met or not. 
 
-**If Else Statement**: This will check a statement REGARDLESS, but the statement which is run depends on the if expression is met or not.
+14. **Booleans Expressions and Selection/Iteration**: These are a selection of code that allows for expressions to be iterated through or selected to see if a conditional is true/false (boolean).
+
+16. **Truth Tables**: This is a table to determine if a compound statement is true or false.
+
+17. **Characters**: These are singular keys that go into code.
+
+18. **Strings**: These are arrays of characters.
+
+19. **Length**: This is a function that counts the length of a string.
+
+20. **Concatenation**: Concatenation is the combination of two strings.
+
+21. **Upper**: This makes the string uppercase.
+
+22. **Lower**: This makes the string lowercase.
+
+23. **Traversing Strings**: These are strings that are processed one character at a time.
+
+24. **If Statement**: If a certain conditional is met, then the program will execute some block of code.
+
+25. **Elif Statement**: This checks if the above statement is true.
+
+26. **Else Conditionals**: Again, checks if something is true or not.
+
+27. **Nested Selection Statements**: This is where there is one selection within another. Multiple conditions can be tested here.
+
+28. **For Loops**: These are loops to iterate over a sequence.
+
+29. **While Loops**: While a certain conditional is true, a certain block of code is going to continue running.
+
+30. **List Combining Loops**: These are loops that can combine lists.
+
+31. **Procedural Abstraction**: This is when code sections can be generalized by creating parameters. This is useful, as code blocks can be utilized in multiple different program situations. 
+
+32. **Python def procedures**: These are user-defined procedures.
+
+33. **Parameters**: These are placeholders for variables that a function utilizes.
+
+34. **Return Values**: These are the values that a function returns to the caller.
+
