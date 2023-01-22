@@ -170,7 +170,7 @@ Overall, this CPT submission was average, as it did not have any massive gaping 
         </ul>
         </td>
         <td>
-        <b>Video<b>
+        <b>Video</b>
         <br>
         The video showed an input (1) (text entry) which resulted in the running of the program (2), which is a puzzle related game. The video showed the resulting output (3) of the blank spaces showing up and the number of lives left for the user based on the number of times they had guessed incorrectly.
         <br>
@@ -270,11 +270,10 @@ Overall, this CPT submission was average, as it did not have any massive gaping 
         <td>No discrepancies.</td>
     </tr>
 </table>
-<br>
 
 This CPT submission was outstanding. It thoroughly met all of the criteria and standards set up by College Board, and it didn't require the reader to have to dig deep to find out where they satisfied each of the criterion for each of the 6 sections.
 
-**Submission #3**
+<b>SUBMISSION #3</b>
 <table>
     <tr>
         <td>Reporting Category</td>
@@ -413,11 +412,10 @@ This CPT submission was outstanding. It thoroughly met all of the criteria and s
         <td>No discrepancies.</td>
     </tr>
 </table>
-<br>
 
 Overall, this CPT project submission earned a 1/6, which isn't too good. It hit some criterion here or there throughout, but it never met all of the requirements besides in the first category, resulting in this project's 1/6.
 
-**Submission #4**
+<b>Submission #4</b>
 <table>
     <tr>
         <td>Reporting Category</td>
