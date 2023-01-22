@@ -271,8 +271,8 @@ Overall, this CPT submission was average, as it did not have any massive gaping 
     </tr>
 </table>
 <br>
+
 This CPT submission was outstanding. It thoroughly met all of the criteria and standards set up by College Board, and it didn't require the reader to have to dig deep to find out where they satisfied each of the criterion for each of the 6 sections.
-<br>
 
 **Submission #3**
 <table>
@@ -414,6 +414,8 @@ This CPT submission was outstanding. It thoroughly met all of the criteria and s
     </tr>
 </table>
 <br>
+
+Overall, this CPT project submission earned a 1/6, which isn't too good. It hit some criterion here or there throughout, but it never met all of the requirements besides in the first category, resulting in this project's 1/6.
 
 **Submission #4**
 <table>
