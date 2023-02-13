@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      9 min read
     
 </span></p>
 
@@ -144,10 +144,38 @@ window.onload = wrap_img;
 
 <p><strong>5.6 IMPORTANT NOTES</strong>:</p>
 
+<ul>
+  <li>PII stands for Personal Identifiable Information, which are pieces of information that are unique to each person. This can include a person’s email address, home address, SSN, and tax records.</li>
+  <li>PII should be kept secure to yourself and not shared with anyone, including family members (unless you are a minor), as ANYONE can steal your information, and your information being stolen can result in your life staying on pause for a long time.</li>
+  <li>Multi-Factor Authentication: This is a very secure and now more commonly used type of authentication which requires a second step of authentication, such as entering a texted or emailed code.</li>
+  <li>Phishing: A method to motivate someone to click and receive some sort of reward, prize, or information. This can then lead someone towards a malicious link.</li>
+  <li>Symmetric Encryption: Only one key is used to encrypt electronic information.</li>
+  <li>Asymmetric Cryptography: This uses a paired public and private key to encrypt/decrypt information and protect it from any unauthorized usage.</li>
+  <li>There are many usages of viruses and malware on the IoT to compromise your machine.</li>
+</ul>
+
 <p><strong>5.6 Blog Post Reflection</strong>:</p>
+
+<p><em>1. Describe PII you have seen on project in CompSci Principles</em>: One of the primary examples of PII I have seen in projects in Comp Sci are user account login information. This includes usernames and passwords to accounts on websites which contains important information for users. 
+<em>2. What are your feelings about PII and your personal exposure?</em>: I feel that PII is extremely important, and personal exposure is a very real risk in today’s world. This is why it is very important that we have secure passwords and that we keep our own personal information close to ourselves. 
+<em>3. Describe good and bad passwords? What is another step that is used to assist in authentication.</em>: Good passwords are passwords that contain a sort of complexity. This means having a password length of at least 8-10 characters, and having a variety of special characters, uppercase and lowercase letters, and numbers in the password so that the passwords are difficult to crack. Bad passwords are passwords that are easy to guess and are of very short length. Another step used to assist in authentication is multi-factor authentication, which sets two steps to confirm a user’s account creation, login, or deletion. Another step that helps with authentication is the enforcement of password complexity when a user creates an account, to make sure that passwords are secure upon creation.
+<em>4. Try to describe Symmetric and Asymmetric Encryption.</em>: In symmetric encryption, only one key is used for both encryption and decryption of information. In asymmetric encryption, there are two keys: one public key and one private key. These keys are paired and are a more secure method of authentication. 
+<em>5. Provide an example of encryption we used in AWS Deployment</em>: An example of encryption we utilized in AWS Deployment was Certbot. Certbot converts our sites from HTTP –&gt; HTTPS Authentication, which uses SSL encryption to encrypt requests and responses. 
+<em>6. Describe a phishing scheme you have learned about the <strong>hard way</strong>. Describe some other phishing techniques.</em>: I have never learned about a phishing scheme the hard way, since I always prioritize keeping my passwords secure and following proper steps to not fall prey to such attacks which can compromise my personal information. One very common phishing technique is through the email phishing technique, where a common/unsuspicious subject is used and an email is sent with an unknown email address, asking you to open a link to give information, or asking you to open a link which will download malware onto your system.</p>
 
 <p><strong>5.6 Extra Reflection &amp; Research</strong>:</p>
 
+<p>I did a lot of research about password hashing and keeping secure passwords and other methods to stay safe. Here were some of my findings:</p>
+
+<p>On most websites, to ensure that user data is safe, they make sure that when an individual creates an account, the password meets a minimum password length and complexity check (special characters, capital letters, numbers). I really thought that this would be useful and pretty cool to implement on my group’s CPT, especially with the relevance that cybersecurity has in our world today.</p>
+
+<p>Research (source: https://web.dev/sign-in-form-best-practices/)</p>
+
+<p>From research, one of the main things I found to combat this issue is to use the “type” attribute. Using the attribute, the code can identify which inputs for a username OR password have invalid characters or do not meet specific requirements.</p>
+
+<p>Therefore, using this feature, our site can make a specific password invalid if it were to not have enough characters or not enough complexity (by our own standards). This is definitely something that we will look to work on.</p>
+
+<p>Furthermore, using the example from the OOP Hacks from the APCSP site, there is a way to encode passwords so that they are not readable in plain text. SHA256, which was used in the example, is not nearly the most secure hashing type, so we will do some more research to see which encryption method is the best to be utilized and we will use that.</p>
 
   </div><a class="u-url" href="/FastPages/markdown/2023/02/12/blogpost5556.html" hidden></a>
 </article>
