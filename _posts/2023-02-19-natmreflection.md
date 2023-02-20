@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: N@TM & A Reflection On the Night
+description: Night at the Museum Reflection
 categories: [markdown]
-title: N@TM & A Reflection On the Night
+title: Night at the Museum Reflection
 ---
 
 
