@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Unit 2.2 Data Compression, Images | Vardaan’s FastPages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Unit 2.2 Data Compression, Images" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Lab will perform alterations on images, manipulate RGB values, and reduce the number of pixels. College Board requires you to learn about Lossy and Lossless compression." />
+<meta property="og:description" content="Lab will perform alterations on images, manipulate RGB values, and reduce the number of pixels. College Board requires you to learn about Lossy and Lossless compression." />
+<link rel="canonical" href="https://vardaansinha.github.io/FastPages/2023/03/07/AP-unit2-2.html" />
+<meta property="og:url" content="https://vardaansinha.github.io/FastPages/2023/03/07/AP-unit2-2.html" />
+<meta property="og:site_name" content="Vardaan’s FastPages" />
+<meta property="og:image" content="https://vardaansinha.github.io/FastPages/images/python.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-07T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://vardaansinha.github.io/FastPages/images/python.png" />
+<meta property="twitter:title" content="Unit 2.2 Data Compression, Images" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-07T00:00:00-06:00","datePublished":"2023-03-07T00:00:00-06:00","description":"Lab will perform alterations on images, manipulate RGB values, and reduce the number of pixels. College Board requires you to learn about Lossy and Lossless compression.","headline":"Unit 2.2 Data Compression, Images","image":"https://vardaansinha.github.io/FastPages/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/FastPages/2023/03/07/AP-unit2-2.html"},"url":"https://vardaansinha.github.io/FastPages/2023/03/07/AP-unit2-2.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/FastPages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://vardaansinha.github.io/FastPages/feed.xml" title="Vardaan's FastPages" /><link rel="shortcut icon" type="image/x-icon" href="/FastPages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/FastPages/">Vardaan&#39;s FastPages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/FastPages/about/">About Me</a><a class="page-link" href="/FastPages/notes/">Computer Science Notes</a><a class="page-link" href="/FastPages/categories/">Tags</a><a class="page-link" href="/FastPages/javascript/overview">JavaScript!</a><a class="page-link" href="/FastPages/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Unit 2.2 Data Compression, Images</h1><p class="page-description">Lab will perform alterations on images, manipulate RGB values, and reduce the number of pixels.  College Board requires you to learn about Lossy and Lossless compression.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-07T00:00:00-06:00" itemprop="datePublished">
+        Mar 7, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      10 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/vardaansinha/FastPages/tree/master/_notebooks/2023-03-07-AP-unit2-2.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/FastPages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/vardaansinha/FastPages/master?filepath=_notebooks%2F2023-03-07-AP-unit2-2.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/FastPages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/vardaansinha/FastPages/blob/master/_notebooks/2023-03-07-AP-unit2-2.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/FastPages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fvardaansinha%2FFastPages%2Fblob%2Fmaster%2F_notebooks%2F2023-03-07-AP-unit2-2.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/FastPages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Enumerate-"Data"-Big-Idea-from-College-Board">Enumerate &quot;Data&quot; Big Idea from College Board </a></li>
+<li class="toc-entry toc-h2"><a href="#Image-Files-and-Size">Image Files and Size </a></li>
+<li class="toc-entry toc-h2"><a href="#Python-Libraries-and-Concepts-used-for-Jupyter-and-Files/Directories">Python Libraries and Concepts used for Jupyter and Files/Directories </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#IPython">IPython </a></li>
+<li class="toc-entry toc-h3"><a href="#pathlib">pathlib </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Reading-and-Encoding-Images-(2-implementations-follow)">Reading and Encoding Images (2 implementations follow) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#PIL-(Python-Image-Library)">PIL (Python Image Library) </a></li>
+<li class="toc-entry toc-h3"><a href="#base64">base64 </a></li>
+<li class="toc-entry toc-h3"><a href="#numpy">numpy </a></li>
+<li class="toc-entry toc-h3"><a href="#io,-BytesIO">io, BytesIO </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Data-Structures,-Imperative-Programming-Style,-and-working-with-Images">Data Structures, Imperative Programming Style, and working with Images </a></li>
+<li class="toc-entry toc-h2"><a href="#Data-Structures-and-OOP">Data Structures and OOP </a></li>
+<li class="toc-entry toc-h2"><a href="#Additionally,-review-all-the-imports-in-these-three-demos.--Create-a-definition-of-their-purpose,-specifically-these-...">Additionally, review all the imports in these three demos.  Create a definition of their purpose, specifically these ... </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-03-07-AP-unit2-2.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id='Enumerate-"Data"-Big-Idea-from-College-Board'>
+<a class="anchor" href="#Enumerate-" data aria-hidden="true"><span class="octicon octicon-link"></span></a>Enumerate "Data" Big Idea from College Board<a class="anchor-link" href="#Enumerate-%22Data%22-Big-Idea-from-College-Board"> </a>
+</h2>
+<blockquote>
+<p>Some of the big ideas and vocab that you observe, talk about it with a partner ...</p>
+<ul>
+<li>"Data compression is the reduction of the number of bits needed to represent data"</li>
+<li>"Data compression is used to save transmission time and storage space."</li>
+<li>"lossy data can reduce data but the original data is not recovered"</li>
+<li>"lossless data lets you restore and recover"</li>
+</ul>
+</blockquote>
+<p>The <a href="https://csp.nighthawkcodingsociety.com/starter/rgb/">Image Lab Project</a> contains a plethora of College Board Unit 2 data concepts. Working with Images provides many opportunities for compression and analyzing size.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Image-Files-and-Size">
+<a class="anchor" href="#Image-Files-and-Size" aria-hidden="true"><span class="octicon octicon-link"></span></a>Image Files and Size<a class="anchor-link" href="#Image-Files-and-Size"> </a>
+</h2>
+<blockquote>
+<p>Here are some <a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/starter/static/img">Images Files</a>.  Download these files, load them into <code>images</code> directory under <strong>_notebooks</strong> in your Blog.   - <a href="https://github.com/nighthawkcoders/APCSP/blob/master/_notebooks/images/clouds-impression.png">Clouds Impression</a></p>
+<ul>
+<li><a href="https://github.com/nighthawkcoders/APCSP/blob/master/_notebooks/images/lassen-volcano.jpg">Lassen Volcano</a></li>
+<li><a href="https://github.com/nighthawkcoders/APCSP/blob/master/_notebooks/images/green-square-16.png">Green Square</a></li>
+</ul>
+</blockquote>
+<p>Describe some of the meta data and considerations when managing Image files.  Describe how these relate to Data Compression ...</p>
+<ul>
+<li>File Type, PNG and JPG are two types used in this lab</li>
+<li>Size, height and width, number of pixels</li>
+<li>Visual perception, lossy compression</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-Libraries-and-Concepts-used-for-Jupyter-and-Files/Directories">
+<a class="anchor" href="#Python-Libraries-and-Concepts-used-for-Jupyter-and-Files/Directories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python Libraries and Concepts used for Jupyter and Files/Directories<a class="anchor-link" href="#Python-Libraries-and-Concepts-used-for-Jupyter-and-Files/Directories"> </a>
+</h2>
+<blockquote>
+<p>Introduction to displaying images in Jupyter notebook</p>
+</blockquote>
+<h3 id="IPython">
+<a class="anchor" href="#IPython" aria-hidden="true"><span class="octicon octicon-link"></span></a>IPython<a class="anchor-link" href="#IPython"> </a>
+</h3>
+<blockquote>
+<p>Support visualization of data in Jupyter notebooks.  Visualization is specific to View, for the web visualization needs to be converted to HTML.</p>
+</blockquote>
+<h3 id="pathlib">
+<a class="anchor" href="#pathlib" aria-hidden="true"><span class="octicon octicon-link"></span></a>pathlib<a class="anchor-link" href="#pathlib"> </a>
+</h3>
+<blockquote>
+<p>File paths are different on Windows versus Mac and Linux.  This can cause problems in a project as you work and deploy on different Operating Systems (OS's), pathlib is a solution to this problem.</p>
+<ul>
+<li>What are commands you use in terminal to access files?</li>
+<li>What are the command you use in Windows terminal to access files?</li>
+<li>What are some of the major differences?</li>
+</ul>
+</blockquote>
+<p>Provide what you observed, struggled with, or leaned while playing with this code.</p>
+<ul>
+<li>Why is path a big deal when working with images?</li>
+<li>How does the meta data source and label relate to Unit 5 topics?</li>
+<li>Look up IPython, describe why this is interesting in Jupyter Notebooks for both Pandas and Images?</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>  <span class="c1"># https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f</span>
+
+<span class="c1"># prepares a series of images</span>
+<span class="k">def</span> <span class="nf">image_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"images/"</span><span class="p">),</span> <span class="n">images</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># path of static images is defaulted</span>
+    <span class="k">if</span> <span class="n">images</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># default image</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Peter Carolin"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Clouds Impression"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"clouds-impression.png"</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Peter Carolin"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Lassen Volcano"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"lassen-volcano.jpg"</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+        <span class="c1"># File to open</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">]</span> <span class="o">=</span> <span class="n">path</span> <span class="o">/</span> <span class="n">image</span><span class="p">[</span><span class="s1">'file'</span><span class="p">]</span>  <span class="c1"># file with path</span>
+    <span class="k">return</span> <span class="n">images</span>
+
+<span class="k">def</span> <span class="nf">image_display</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>  
+        <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">image</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">]))</span>
+
+
+<span class="c1"># Run this as standalone tester to see sample data printed in Jupyter terminal</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="c1"># print parameter supplied image</span>
+    <span class="n">green_square</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">(</span><span class="n">images</span><span class="o">=</span><span class="p">[{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Internet"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Green Square"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"green-square-16.png"</span><span class="p">}])</span>
+    <span class="n">image_display</span><span class="p">(</span><span class="n">green_square</span><span class="p">)</span>
+    
+    <span class="c1"># display default images from image_data()</span>
+    <span class="n">default_images</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">()</span>
+    <span class="n">image_display</span><span class="p">(</span><span class="n">default_images</span><span class="p">)</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Reading-and-Encoding-Images-(2-implementations-follow)">
+<a class="anchor" href="#Reading-and-Encoding-Images-(2-implementations-follow)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reading and Encoding Images (2 implementations follow)<a class="anchor-link" href="#Reading-and-Encoding-Images-(2-implementations-follow)"> </a>
+</h2>
+<h3 id="PIL-(Python-Image-Library)">
+<a class="anchor" href="#PIL-(Python-Image-Library)" aria-hidden="true"><span class="octicon octicon-link"></span></a>PIL (Python Image Library)<a class="anchor-link" href="#PIL-(Python-Image-Library)"> </a>
+</h3>
+<blockquote>
+<p><a href="https://pillow.readthedocs.io/en/stable/">Pillow or PIL</a> provides the ability to work with images in Python.  <a href="https://www.geeksforgeeks.org/working-images-python/?ref=lbp">Geeks for Geeks</a> shows some ideas on working with images.</p>
+</blockquote>
+<h3 id="base64">
+<a class="anchor" href="#base64" aria-hidden="true"><span class="octicon octicon-link"></span></a>base64<a class="anchor-link" href="#base64"> </a>
+</h3>
+<blockquote>
+<p>Image formats (JPG, PNG) are often called <strong>*Binary File formats</strong>, it is difficult to pass these over HTTP.   Thus, <a href="https://en.wikipedia.org/wiki/Base64">base64</a> converts binary encoded data (8-bit, ASCII/Unicode) into a text encoded scheme (24 bits, 6-bit Base64 digits).  Thus base64 is used to transport and embed binary images into textual assets such as HTML and CSS.- How is Base64 similar or different to Binary and Hexadecimal?</p>
+<ul>
+<li>Translate first 3 letters of your name to Base64.</li>
+</ul>
+</blockquote>
+<h3 id="numpy">
+<a class="anchor" href="#numpy" aria-hidden="true"><span class="octicon octicon-link"></span></a>numpy<a class="anchor-link" href="#numpy"> </a>
+</h3>
+<blockquote>
+<p><a href="https://numpy.org/">Numpy</a> is described as "The fundamental package for scientific computing with Python".  In the Image Lab, a Numpy array is created from the image data in order to simplify access and change to the RGB values of the pixels, converting pixels to grey scale.</p>
+</blockquote>
+<h3 id="io,-BytesIO">
+<a class="anchor" href="#io,-BytesIO" aria-hidden="true"><span class="octicon octicon-link"></span></a>io, BytesIO<a class="anchor-link" href="#io,-BytesIO"> </a>
+</h3>
+<blockquote>
+<p>Input and Output (I/O) is a fundamental of all Computer Programming. Input/output (I/O) buffering is a technique used to optimize I/O operations.  In large quantities of data, how many frames of input the server currently has queued is the buffer.  In this example, there is a very large picture that lags.</p>
+<ul>
+<li>Where have you been a consumer of buffering?  </li>
+<li>From your consumer experience, what effects have you experienced from buffering?  </li>
+<li>How do these effects apply to images?</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-Structures,-Imperative-Programming-Style,-and-working-with-Images">
+<a class="anchor" href="#Data-Structures,-Imperative-Programming-Style,-and-working-with-Images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Structures, Imperative Programming Style, and working with Images<a class="anchor-link" href="#Data-Structures,-Imperative-Programming-Style,-and-working-with-Images"> </a>
+</h2>
+<blockquote>
+<p>Introduction to creating meta data and manipulating images.  Look at each procedure and explain the the purpose and results of this program.  Add any insights or challenges as you explored this program.</p>
+<ul>
+<li>Does this code seem like a series of steps are being performed?</li>
+<li>Describe Grey Scale algorithm in English or Pseudo code?</li>
+<li>Describe scale image?  What is before and after on pixels in three images?</li>
+<li>Is scale image a type of compression?  If so, line it up with College Board terms described?</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>  <span class="c1"># https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">pilImage</span> <span class="c1"># as pilImage is used to avoid conflicts</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># prepares a series of images</span>
+<span class="k">def</span> <span class="nf">image_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"images/"</span><span class="p">),</span> <span class="n">images</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># path of static images is defaulted</span>
+    <span class="k">if</span> <span class="n">images</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># default image</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Internet"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Green Square"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"green-square-16.png"</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Peter Carolin"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Clouds Impression"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"clouds-impression.png"</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Peter Carolin"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Lassen Volcano"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"lassen-volcano.jpg"</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+        <span class="c1"># File to open</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">]</span> <span class="o">=</span> <span class="n">path</span> <span class="o">/</span> <span class="n">image</span><span class="p">[</span><span class="s1">'file'</span><span class="p">]</span>  <span class="c1"># file with path</span>
+    <span class="k">return</span> <span class="n">images</span>
+
+<span class="c1"># Large image scaled to baseWidth of 320</span>
+<span class="k">def</span> <span class="nf">scale_image</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="n">baseWidth</span> <span class="o">=</span> <span class="mi">320</span>
+    <span class="n">scalePercent</span> <span class="o">=</span> <span class="p">(</span><span class="n">baseWidth</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">scaleHeight</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">scalePercent</span><span class="p">)))</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="n">baseWidth</span><span class="p">,</span> <span class="n">scaleHeight</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span>
+
+<span class="c1"># PIL image converted to base64</span>
+<span class="k">def</span> <span class="nf">image_to_base64</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">BytesIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">buffer</span><span class="p">:</span>
+        <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="c1"># Set Properties of Image, Scale, and convert to Base64</span>
+<span class="k">def</span> <span class="nf">image_management</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>  <span class="c1"># path of static images is defaulted        </span>
+    <span class="c1"># Image open return PIL image object</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">pilImage</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">])</span>
+    
+    <span class="c1"># Python Image Library operations</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">format</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">mode</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'size'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span>
+    <span class="c1"># Scale the Image</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">scale_image</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'pil'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'scaled_size'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span>
+    <span class="c1"># Scaled HTML</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'html'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'&lt;img src="data:image/png;base64,</span><span class="si">%s</span><span class="s1">"&gt;'</span> <span class="o">%</span> <span class="n">image_to_base64</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'pil'</span><span class="p">],</span> <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">])</span>
+    
+<span class="c1"># Create Grey Scale Base64 representation of Image</span>
+<span class="k">def</span> <span class="nf">image_management_add_html_grey</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="c1"># Image open return PIL image object</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="s1">'pil'</span><span class="p">]</span>
+    <span class="nb">format</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">]</span>
+    
+    <span class="n">img_data</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">getdata</span><span class="p">()</span>  <span class="c1"># Reference https://www.geeksforgeeks.org/python-pil-image-getdata/</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img_data</span><span class="p">)</span> <span class="c1"># PIL image to numpy array</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># key/value for data converted to gray scale</span>
+
+    <span class="c1"># 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted</span>
+    <span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">image</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]:</span>
+        <span class="c1"># create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/</span>
+        <span class="n">average</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c1"># average pixel values and use // for integer division</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="c1"># PNG format</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">))</span>
+        <span class="c1"># end for loop for pixels</span>
+        
+    <span class="n">img</span><span class="o">.</span><span class="n">putdata</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">])</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'html_grey'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'&lt;img src="data:image/png;base64,</span><span class="si">%s</span><span class="s1">"&gt;'</span> <span class="o">%</span> <span class="n">image_to_base64</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+
+
+<span class="c1"># Jupyter Notebook Visualization of Images</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="c1"># Use numpy to concatenate two arrays</span>
+    <span class="n">images</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">()</span>
+    
+    <span class="c1"># Display meta data, scaled view, and grey scale for each image</span>
+    <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+        <span class="n">image_management</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"---- meta data -----"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'label'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'source'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Original size: "</span><span class="p">,</span> <span class="n">image</span><span class="p">[</span><span class="s1">'size'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Scaled size: "</span><span class="p">,</span> <span class="n">image</span><span class="p">[</span><span class="s1">'scaled_size'</span><span class="p">])</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"-- original image --"</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'html'</span><span class="p">]))</span> 
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"--- grey image ----"</span><span class="p">)</span>
+        <span class="n">image_management_add_html_grey</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'html_grey'</span><span class="p">]))</span> 
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Data-Structures-and-OOP">
+<a class="anchor" href="#Data-Structures-and-OOP" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Structures and OOP<a class="anchor-link" href="#Data-Structures-and-OOP"> </a>
+</h2>
+<blockquote>
+<p>Most data structures classes require Object Oriented Programming (OOP).  Since this class is lined up with a College Course,  OOP will be talked about often.  Functionality in remainder of this Blog is the same as the prior implementation.  Highlight some of the key difference you see between imperative and oop styles.</p>
+<ul>
+<li>Read imperative and object-oriented programming on Wikipedia</li>
+<li>Consider how data is organized in two examples, in relations to procedures</li>
+<li>Look at Parameters in Imperative and Self in OOP</li>
+</ul>
+</blockquote>
+<h2 id="Additionally,-review-all-the-imports-in-these-three-demos.--Create-a-definition-of-their-purpose,-specifically-these-...">
+<a class="anchor" href="#Additionally,-review-all-the-imports-in-these-three-demos.--Create-a-definition-of-their-purpose,-specifically-these-..." aria-hidden="true"><span class="octicon octicon-link"></span></a>Additionally, review all the imports in these three demos.  Create a definition of their purpose, specifically these ...<a class="anchor-link" href="#Additionally,-review-all-the-imports-in-these-three-demos.--Create-a-definition-of-their-purpose,-specifically-these-..."> </a>
+</h2>
+<ul>
+<li>PIL</li>
+<li>numpy</li>
+<li>base64</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>  <span class="c1"># https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">pilImage</span> <span class="c1"># as pilImage is used to avoid conflicts</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="k">class</span> <span class="nc">Image_Data</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">baseWidth</span><span class="o">=</span><span class="mi">320</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_source</span> <span class="o">=</span> <span class="n">source</span>    <span class="c1"># variables with self prefix become part of the object, </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="n">file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="n">path</span> <span class="o">/</span> <span class="n">file</span>  <span class="c1"># file with path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_baseWidth</span> <span class="o">=</span> <span class="n">baseWidth</span>
+
+        <span class="c1"># Open image and scale to needs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_img</span> <span class="o">=</span> <span class="n">pilImage</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filename</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_img</span><span class="o">.</span><span class="n">format</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_img</span><span class="o">.</span><span class="n">mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_originalSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">img</span><span class="o">.</span><span class="n">size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scale_image</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_html</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_to_html</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_img</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_html_grey</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_to_html_grey</span><span class="p">()</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">source</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_source</span>  
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> 
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span>   
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">filename</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span>   
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">img</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_img</span>
+             
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">mode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">originalSize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_originalSize</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_img</span><span class="o">.</span><span class="n">size</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">html</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_html</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">html_grey</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_html_grey</span>
+        
+    <span class="c1"># Large image scaled to baseWidth of 320</span>
+    <span class="k">def</span> <span class="nf">scale_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">scalePercent</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_baseWidth</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">scaleHeight</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">scalePercent</span><span class="p">)))</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_baseWidth</span><span class="p">,</span> <span class="n">scaleHeight</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_img</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span>
+    
+    <span class="c1"># PIL image converted to base64</span>
+    <span class="k">def</span> <span class="nf">image_to_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">BytesIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">buffer</span><span class="p">:</span>
+            <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">'&lt;img src="data:image/png;base64,</span><span class="si">%s</span><span class="s1">"&gt;'</span> <span class="o">%</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+            
+    <span class="c1"># Create Grey Scale Base64 representation of Image</span>
+    <span class="k">def</span> <span class="nf">image_to_html_grey</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">img_grey</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_img</span>
+        <span class="n">numpy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_img</span><span class="o">.</span><span class="n">getdata</span><span class="p">())</span> <span class="c1"># PIL image to numpy array</span>
+        
+        <span class="n">grey_data</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># key/value for data converted to gray scale</span>
+        <span class="c1"># 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted</span>
+        <span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">numpy</span><span class="p">:</span>
+            <span class="c1"># create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/</span>
+            <span class="n">average</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c1"># average pixel values and use // for integer division</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">grey_data</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="c1"># PNG format</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">grey_data</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">))</span>
+            <span class="c1"># end for loop for pixels</span>
+            
+        <span class="n">img_grey</span><span class="o">.</span><span class="n">putdata</span><span class="p">(</span><span class="n">grey_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_to_html</span><span class="p">(</span><span class="n">img_grey</span><span class="p">)</span>
+
+        
+<span class="c1"># prepares a series of images, provides expectation for required contents</span>
+<span class="k">def</span> <span class="nf">image_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"images/"</span><span class="p">),</span> <span class="n">images</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># path of static images is defaulted</span>
+    <span class="k">if</span> <span class="n">images</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># default image</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Internet"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Green Square"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"green-square-16.png"</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Peter Carolin"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Clouds Impression"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"clouds-impression.png"</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Peter Carolin"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Lassen Volcano"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"lassen-volcano.jpg"</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="k">return</span> <span class="n">path</span><span class="p">,</span> <span class="n">images</span>
+
+<span class="c1"># turns data into objects</span>
+<span class="k">def</span> <span class="nf">image_objects</span><span class="p">():</span>        
+    <span class="n">id_Objects</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">path</span><span class="p">,</span> <span class="n">images</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+        <span class="n">id_Objects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Image_Data</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">image</span><span class="p">[</span><span class="s1">'source'</span><span class="p">],</span> 
+                                  <span class="n">label</span><span class="o">=</span><span class="n">image</span><span class="p">[</span><span class="s1">'label'</span><span class="p">],</span>
+                                  <span class="n">file</span><span class="o">=</span><span class="n">image</span><span class="p">[</span><span class="s1">'file'</span><span class="p">],</span>
+                                  <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+                                  <span class="p">))</span>
+    <span class="k">return</span> <span class="n">id_Objects</span>
+
+<span class="c1"># Jupyter Notebook Visualization of Images</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">ido</span> <span class="ow">in</span> <span class="n">image_objects</span><span class="p">():</span> <span class="c1"># ido is an Imaged Data Object</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"---- meta data -----"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ido</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ido</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ido</span><span class="o">.</span><span class="n">file</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ido</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ido</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Original size: "</span><span class="p">,</span> <span class="n">ido</span><span class="o">.</span><span class="n">originalSize</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Scaled size: "</span><span class="p">,</span> <span class="n">ido</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"-- scaled image --"</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">ido</span><span class="o">.</span><span class="n">html</span><span class="p">))</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"--- grey image ---"</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">ido</span><span class="o">.</span><span class="n">html_grey</span><span class="p">))</span>
+        
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h2>
+<blockquote>
+<p>Early Seed award</p>
+<ul>
+<li>Add this Blog to you own Blogging site.</li>
+<li>In the Blog add a Happy Face image.</li>
+<li>Have Happy Face Image open when Tech Talk starts, running on localhost.  Don't tell anyone. Show to Teacher.</li>
+</ul>
+<p>AP Prep</p>
+<ul>
+<li>In the Blog add notes and observations on each code cell that request an answer.</li>
+<li>In blog add College Board practice problems for 2.3</li>
+<li>Choose 2 images, one that will more likely result in lossy data compression and one that is more likely to result in lossless data compression. Explain.</li>
+</ul>
+<p>Project Addition</p>
+<ul>
+<li>If your project has images in it, try to implement an image change that has a purpose. (Ex. An item that has been sold out could become gray scale)</li>
+</ul>
+<p>Pick a programming paradigm and solve some of the following ...</p>
+<ul>
+<li>Numpy, manipulating pixels.  As opposed to Grey Scale treatment, pick a couple of other types like red scale, green scale, or blue scale.  We want you to be manipulating pixels in the image.</li>
+<li>Binary and Hexadecimal reports.  Convert and produce pixels in binary and Hexadecimal and display.</li>
+<li>Compression and Sizing of images.  Look for insights into compression Lossy and Lossless.  Look at PIL library and see if there are other things that can be done.</li>
+<li>There are many effects you can do as well with PIL. Blur the image or write Meta Data on screen, aka Title, Author and Image size.</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://user-images.githubusercontent.com/45215873/223306861-d792bea8-2129-4c06-81d4-5051c12cd076.png" alt="Smiley svg"></p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/FastPages/2023/03/07/AP-unit2-2.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/FastPages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://vardaansinha.github.io/FastPages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/FastPages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
