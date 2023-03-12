@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      17 min read
     
 </span></p>
 
@@ -1405,6 +1405,119 @@ Please also refer to the documentation for alternative solver options:
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">'files/nfl.json'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"HIGHEST QUARTERBACK HEIGHT"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Height</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">Height</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"SMALLEST QUARTERBACK HEIGHT"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Height</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">Height</span><span class="o">.</span><span class="n">min</span><span class="p">()])</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"TOP 5 QUARTERBACK HEIGHTS"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"THE AVERAGE QUARTERBACK HEIGHT IN INCHES IS..."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Height'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"THE MEDIAN QUARTERBACK WEIGHT IN POUNDS IS..."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Weight'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"SOME STATISTICS ABOUT THE PROSPECTS QUALITIES:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>HIGHEST QUARTERBACK HEIGHT
+   Height  Weight  QB Ranking
+0      76     244           1
+2      76     229           3
+
+SMALLEST QUARTERBACK HEIGHT
+   Height  Weight  QB Ranking
+1      70     214           2
+
+TOP 5 QUARTERBACK HEIGHTS
+   Height  Weight  QB Ranking
+0      76     244           1
+1      70     214           2
+2      76     229           3
+3      75     217           4
+4      75     231           5
+
+
+
+THE AVERAGE QUARTERBACK HEIGHT IN INCHES IS...
+73.5
+
+
+
+THE MEDIAN QUARTERBACK WEIGHT IN POUNDS IS...
+213.5
+
+
+
+SOME STATISTICS ABOUT THE PROSPECTS QUALITIES:
+          Height      Weight  QB Ranking
+count  12.000000   12.000000   12.000000
+mean   73.500000  215.666667    6.500000
+std     1.977142   14.278613    3.605551
+min    70.000000  192.000000    1.000000
+25%    72.000000  207.000000    3.750000
+50%    73.500000  213.500000    6.500000
+75%    75.000000  225.250000    9.250000
+max    76.000000  244.000000   12.000000
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>EXPLANATION</strong>:</p>
+<p>In the above code cell, I attempted to utilize plenty of Pandas utilities. I created my own dataset instead of using one from online, and gathered data based on 2023 NFL Quarterback Prospects straight out of college. I got data on the top 12 quarterbacks from this years draft, and used multiple sources to fact check the data that I was inputting. In this case, the three columns in the data were their height, weight, and quarterback ranking based on multiple analysts' picks. I sorted this data and used Panda to list the top 5 quarterback heights, the biggest and smallest quarterbacks, the average quarterback height, the median quarterback weight, and something unique that I did was that I used the descriptive statistics function unique to Panda to list all of the IQR ranges, max values, etc based on the created dataset. All of the data was stored in nfl.json, a readable file.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>2.3 CB QUIZ</strong>:</p>
+<p><img src="https://user-images.githubusercontent.com/45215873/224520722-14298467-5465-4c43-b897-dba9ae89f748.png" alt="image"></p>
+
+</div>
+</div>
+</div>
 </div>
 
 
