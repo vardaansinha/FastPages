@@ -1,0 +1,75 @@
+/* Define variables for colors */
+/* Use variables to style elements */
+body {
+    background-color: #36f4bb;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust this to your desired height */
+  }
+  
+  h1 {
+    color: #ff07fb;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  p {
+    margin: 1rem 0;
+  }
+  
+  input[type=text], button {
+    width: 100%;
+    max-width: 20rem;
+    margin-bottom: 1rem;
+  }
+  
+  input[type=text] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+  }
+  
+  button {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #d39e00;
+  }
+  
+  #result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  #home-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(#ffc107);
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  #home-button:hover {
+    background-color: #d39e00;
+  }/*# sourceMappingURL=style.css.map */
