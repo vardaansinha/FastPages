@@ -852,28 +852,14 @@
   
 
   
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-
+      ,"page4": {
+          "title": "Theme Changer",
+          "content": "Theme Changer . You guys can copy this file and change/improve it here is the link . . Toggle Theme &lt;/html&gt; .",
+          "url": "https://vardaansinha.github.io/FastPages/_pages/05_themechanger.html",
+          "relUrl": "/_pages/05_themechanger.html",
+          "date": ""
+      }
+      
   
 
   
@@ -884,7 +870,32 @@
   
 
   
-      ,"page17": {
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+      ,"page18": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://vardaansinha.github.io/FastPages/robots.txt",
