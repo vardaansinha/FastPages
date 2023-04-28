@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <style>
+      #button:hover {
+  background-color: #32c422;
+}
+            h6 {
+                font-size: 200%;
+            }
+    </style>
+    <title>Binary Addition</title>
+  </head>
+  <body>
+    <form>
+      <label for="binary1">Binary Number 1:</label>
+      <input type="text" id="binary1" name="binary1"><br><br>
+      <label for="binary2">Binary Number 2:</label>
+      <input type="text" id="binary2" name="binary2"><br><br>
+      <input type="button" value="Add Binary Numbers" onclick="binarySum()">
+    </form>
+    <br>
+    <p id="binary_result"></p>
+    <p id="decimal_result"></p>
+    <script>
+      function binarySum() {
+        // Get the values of the two input fields
+        var binary1 = document.getElementById("binary1").value;
+        var binary2 = document.getElementById("binary2").value;
+        // Convert the binary strings to decimal integers and subtract
+        var decimalSum = parseInt(binary1, 2) - parseInt(binary2, 2);
+        // Convert the decimal sum back to a binary string and display it
+        var binarySum = decimalSum.toString(2);
+        document.getElementById("binary_result").innerHTML = "Difference of binary numbers:  " + binarySum
+        document.getElementById("decimal_result").innerHTML = "Difference in base 10:  " + decimalSum
+      }
+    </script>
+  </body>
+</html>
