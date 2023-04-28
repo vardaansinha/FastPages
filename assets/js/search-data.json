@@ -863,28 +863,14 @@
   
 
   
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-
+      ,"page5": {
+          "title": "Number Guesser v3",
+          "content": "Guess the Number . Guess the Number . Try to guess the number between 1 and 100. . Submit . .",
+          "url": "https://vardaansinha.github.io/FastPages/_pages/06_numberguessersass.html",
+          "relUrl": "/_pages/06_numberguessersass.html",
+          "date": ""
+      }
+      
   
 
   
@@ -895,7 +881,32 @@
   
 
   
-      ,"page18": {
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+      ,"page19": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://vardaansinha.github.io/FastPages/robots.txt",
