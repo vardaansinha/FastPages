@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>CSV Binary Hacks | Vardaan’s FastPages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="CSV Binary Hacks" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CSV Binary Hacks" />
+<meta property="og:description" content="CSV Binary Hacks" />
+<link rel="canonical" href="https://vardaansinha.github.io/FastPages/2023/04/28/csvbinary.html" />
+<meta property="og:url" content="https://vardaansinha.github.io/FastPages/2023/04/28/csvbinary.html" />
+<meta property="og:site_name" content="Vardaan’s FastPages" />
+<meta property="og:image" content="https://vardaansinha.github.io/FastPages/images/python.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-28T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://vardaansinha.github.io/FastPages/images/python.png" />
+<meta property="twitter:title" content="CSV Binary Hacks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-28T00:00:00-05:00","datePublished":"2023-04-28T00:00:00-05:00","description":"CSV Binary Hacks","headline":"CSV Binary Hacks","image":"https://vardaansinha.github.io/FastPages/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/FastPages/2023/04/28/csvbinary.html"},"url":"https://vardaansinha.github.io/FastPages/2023/04/28/csvbinary.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/FastPages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://vardaansinha.github.io/FastPages/feed.xml" title="Vardaan's FastPages" /><link rel="shortcut icon" type="image/x-icon" href="/FastPages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/FastPages/">Vardaan&#39;s FastPages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/FastPages/about/">About Me</a><a class="page-link" href="/FastPages/notes/">Computer Science Notes</a><a class="page-link" href="/FastPages/categories/">Tags</a><a class="page-link" href="/FastPages/javascript/overview">JavaScript!</a><a class="page-link" href="/FastPages/_pages/05_themechanger.html">Theme Changer</a><a class="page-link" href="/FastPages/_pages/06_numberguessersass.html">Number Guesser v3</a><a class="page-link" href="/FastPages/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">CSV Binary Hacks</h1><p class="page-description">CSV Binary Hacks</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-28T00:00:00-05:00" itemprop="datePublished">
+        Apr 28, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/vardaansinha/FastPages/tree/master/_notebooks/2023-04-28-csvbinary.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/FastPages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/vardaansinha/FastPages/master?filepath=_notebooks%2F2023-04-28-csvbinary.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/FastPages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/vardaansinha/FastPages/blob/master/_notebooks/2023-04-28-csvbinary.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/FastPages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fvardaansinha%2FFastPages%2Fblob%2Fmaster%2F_notebooks%2F2023-04-28-csvbinary.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/FastPages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-04-28-csvbinary.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#read csv and sort 'Duration' largest to smallest</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/covid19_tweets.csv'</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'user_location'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--Top 10 User Locations---------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--Bottom 10 User Locations------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>--Top 10 User Locations---------
+                             user_name user_location  \
+144155                      🐝BeeHappy🐝             🪐   
+2572                    ✊Franc-Tireur🗽             🪐   
+11618                       🐝BeeHappy🐝             🪐   
+11692                       🐝BeeHappy🐝             🪐   
+11869                       🐝BeeHappy🐝             🪐   
+135778         Steffen, 👨🏼‍✈️ 🦠➕✈️ = 🚫     🦠Grounded   
+90341                 Petrius Off-Road        🦅💛💛💙❤🌋   
+23145   🏳️‍🌈ÐΛⱤƬⱧ §ⱠӨ₮Я🇪🇸🇮🇪🏴󠁧󠁢󠁳󠁣󠁴󠁿🇬🇧🇺🇸   🦄🌈❤️🧡💛💚💙💜🌈🦄   
+109189  🏳️‍🌈ÐΛⱤƬⱧ §ⱠӨ₮Я🇪🇸🇮🇪🏴󠁧󠁢󠁳󠁣󠁴󠁿🇬🇧🇺🇸   🦄🌈❤️🧡💛💚💙💜🌈🦄   
+27153   🏳️‍🌈ÐΛⱤƬⱧ §ⱠӨ₮Я🇪🇸🇮🇪🏴󠁧󠁢󠁳󠁣󠁴󠁿🇬🇧🇺🇸   🦄🌈❤️🧡💛💚💙💜🌈🦄   
+
+                                         user_description  \
+144155                                                🏝🏖🏔   
+2572    Committed to getting into #GoodTrouble #ICantB...   
+11618                                                 🏝🏖🏔   
+11692                                                 🏝🏖🏔   
+11869                                                 🏝🏖🏔   
+135778  A380 Driver, left handed and seated.  Living i...   
+90341   Calisthenics Athlete 🔥Ο πόνος μεταμορφώνει τον...   
+23145   ᗰᗩᑎᗪᗩᒪOᖇIᗩᑎ ᔕITᕼ ᒪOᖇᗪ Oᖴ ᔕᑎᗩᖇKᗩᔕᗰ ~ᗪEᗰIGEᑎᗪEᖇ ...   
+109189  ~ᗪEᗰIGEᑎᗪEᖇ ᑭᗩᑎᖇOᗰᗩᑎTIᑕ ᒪEᔕᗷIᗩᑎ~ ~ᔕᕼE/TᕼEY ~ G...   
+27153   ᗰᗩᑎᗪᗩᒪOᖇIᗩᑎ ᔕITᕼ ᒪOᖇᗪ Oᖴ ᔕᑎᗩᖇKᗩᔕᗰ ~ᗪEᗰIGEᑎᗪEᖇ ...   
+
+               user_created  user_followers  user_friends  user_favourites  \
+144155  2020-01-24 19:49:32              11            52             1140   
+2572    2014-10-28 15:00:14            1887          5001           239113   
+11618   2020-01-24 19:49:32              10            53             1103   
+11692   2020-01-24 19:49:32              10            53             1103   
+11869   2020-01-24 19:49:32              10            53             1103   
+135778  2015-11-26 09:47:38            3190           351             3900   
+90341   2020-07-05 16:12:42               1             0                1   
+23145   2012-01-10 16:49:20             286           332            29221   
+109189  2012-01-10 16:49:20             305           357            30397   
+27153   2012-01-10 16:49:20             288           335            29289   
+
+        user_verified                 date  \
+144155          False  2020-08-17 05:53:54   
+2572            False  2020-07-25 10:56:42   
+11618           False  2020-07-25 04:25:22   
+11692           False  2020-07-25 04:20:45   
+11869           False  2020-07-25 04:11:40   
+135778          False  2020-08-16 06:34:27   
+90341           False  2020-08-09 09:16:34   
+23145           False  2020-07-26 03:47:49   
+109189          False  2020-08-11 07:23:17   
+27153           False  2020-07-27 05:38:33   
+
+                                                     text  \
+144155  @khaleejtimes @SonuSood @SonuSood thank you fo...   
+2572    @Salacia_sea @kylegriffin1 It’s way beyond rig...   
+11618   @gmanews @WHO @WHOPhilippines @senatePH @sotto...   
+11692   @gmanews @WHO @WHOPhilippines @senatePH @sotto...   
+11869   @gmanews @WHO @WHOPhilippines @senatePH @sotto...   
+135778  HAM &amp;amp; FRA Airport are looking much differe...   
+90341   Magis quam centum dies sine pandemic #COVID19\...   
+23145   #MAGAgonnaMAGAt 🙄Fauci deserves better! These ...   
+109189  College football players need to be safe! If t...   
+27153   @davenewworld_2 It's not just there... 45 minu...   
+
+                           hashtags               source  is_retweet  
+144155                          NaN   Twitter for iPhone       False  
+2572    ['AnthonyFauci', 'COVID19']   Twitter for iPhone       False  
+11618                           NaN   Twitter for iPhone       False  
+11692                           NaN   Twitter for iPhone       False  
+11869                           NaN   Twitter for iPhone       False  
+135778                  ['Covid19']     Tweetbot for iΟS       False  
+90341    ['COVID19', 'coronavirus']  Twitter for Android       False  
+23145            ['MAGAgonnaMAGAt']   Twitter for iPhone       False  
+109189                  ['COVID19']   Twitter for iPhone       False  
+27153                           NaN   Twitter for iPhone       False  
+--Duration Bottom 10------
+                                              user_name user_location  \
+179057                                Elizabeth Bomberg           NaN   
+179059                                   karen ƪ(‾.‾“)┐           NaN   
+179062                      Truth Matter-2/律政悟空，IForYou           NaN   
+179063                             IL State Med Society           NaN   
+179064  JustMe #DefundPolice #AbolishICE/Prisons/Police           NaN   
+179083                                    Auntie Kittie           NaN   
+179091                                      🦋  ROGUE  🦋           NaN   
+179092                                claudia fernandez           NaN   
+179097                                        rainmaker           NaN   
+179098                                        John Geer           NaN   
+
+                                         user_description  \
+179057  Professor of Politics, University of Edinburgh...   
+179059  We will not be silenced 💛💬\n• 12.18 ✨\n• anime...   
+179062  I suggested MagnitskyAct to sanction HK offici...   
+179063  Illinois State Medical Society: doctors workin...   
+179064  I care about too many things. #Academic-ish #C...   
+179083  I'm the auntie you always wished you had.  If ...   
+179091  May all aching hearts find their way there thr...   
+179092                                                NaN   
+179097                                                NaN   
+179098  #StayAtHome #StayAtHomeSaveLifes #MaskUp \nFor...   
+
+               user_created  user_followers  user_friends  user_favourites  \
+179057  2016-08-08 06:52:35             802            80              682   
+179059  2019-09-06 23:04:55              25            52             3549   
+179062  2019-12-21 14:02:02             140            56             2364   
+179063  2008-10-29 18:31:28            2758           798              744   
+179064  2006-10-25 12:00:29             694          3423            42289   
+179083  2019-12-25 18:36:22             888           545               33   
+179091  2017-01-30 07:38:23             628           386            14845   
+179092  2015-07-02 23:07:03              68           192             2455   
+179097  2017-08-16 22:12:17             709          1158            95006   
+179098  2020-04-18 01:55:14              61           168            10817   
+
+        user_verified                 date  \
+179057          False  2020-08-29 19:46:36   
+179059          False  2020-08-29 19:46:19   
+179062          False  2020-08-29 19:46:02   
+179063          False  2020-08-29 19:46:01   
+179064          False  2020-08-29 19:46:00   
+179083          False  2020-08-29 19:45:02   
+179091          False  2020-08-29 19:44:51   
+179092          False  2020-08-29 19:44:49   
+179097          False  2020-08-29 19:44:35   
+179098          False  2020-08-29 19:44:34   
+
+                                                     text  \
+179057  Thanks @edbookfest for this super #climate tal...   
+179059  @realDonaldTrump Just like the double of amoun...   
+179062  📢💥‼️#COVID19 #HerdImmunity, the smartest and c...   
+179063  .@Illinois_Alma’s #COVID19 testing plan is so ...   
+179064  Tell Congress that 9 in 10 people want our ele...   
+179083  Just a quick note for my lovely members.  Soci...   
+179091  @dougmillsnyt @realDonaldTrump @FLOTUS "The #T...   
+179092  @politvidchannel The Trump Administration's In...   
+179097  @politvidchannel Just not the lives of #COVID1...   
+179098  Report #COVID19 outbreaks in K-12 schools here...   
+
+                                                 hashtags  \
+179057                                        ['climate']   
+179059                                        ['COVID19']   
+179062                        ['COVID19', 'HerdImmunity']   
+179063                                        ['COVID19']   
+179064                ['housingstability', 'coronavirus']   
+179083                                                NaN   
+179091                                          ['Trump']   
+179092                                          ['COVID']   
+179097           ['COVID19', 'coronavirus', 'TrumpVirus']   
+179098  ['COVID19', 'CloseTheSchools', 'KeepTheSchools...   
+
+                     source  is_retweet  
+179057      Twitter Web App       False  
+179059  Twitter for Android       False  
+179062      Twitter Web App       False  
+179063               Buffer       False  
+179064      Twitter Web App       False  
+179083        Sprout Social       False  
+179091  Twitter for Android       False  
+179092      Twitter Web App       False  
+179097  Twitter for Android       False  
+179098      Twitter Web App       False  
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I used pandas to work with the file. I wanted to use selection methods (selecting top 10 and bottom 10 locations) since I wanted to check for any sort of recent locations that people have been tweeting about, and then checked the bottom 10 locations to check for any similar trends occurring at an earlier time. Pandas is very useful for this, as it is easy to filter by category in a CSV as such that is labeled by column.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/FastPages/2023/04/28/csvbinary.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/FastPages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://vardaansinha.github.io/FastPages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/FastPages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
