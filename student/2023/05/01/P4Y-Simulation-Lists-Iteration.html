@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hacks for Simulations Group | Vardaan’s FastPages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Hacks for Simulations Group" />
+<meta name="author" content="Vardaan Sinha" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Building a simulation or interaction using lists and iteration" />
+<meta property="og:description" content="Building a simulation or interaction using lists and iteration" />
+<link rel="canonical" href="https://vardaansinha.github.io/FastPages/student/2023/05/01/P4Y-Simulation-Lists-Iteration.html" />
+<meta property="og:url" content="https://vardaansinha.github.io/FastPages/student/2023/05/01/P4Y-Simulation-Lists-Iteration.html" />
+<meta property="og:site_name" content="Vardaan’s FastPages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-01T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hacks for Simulations Group" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vardaan Sinha"},"dateModified":"2023-05-01T00:00:00-05:00","datePublished":"2023-05-01T00:00:00-05:00","description":"Building a simulation or interaction using lists and iteration","headline":"Hacks for Simulations Group","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/FastPages/student/2023/05/01/P4Y-Simulation-Lists-Iteration.html"},"url":"https://vardaansinha.github.io/FastPages/student/2023/05/01/P4Y-Simulation-Lists-Iteration.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/FastPages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://vardaansinha.github.io/FastPages/feed.xml" title="Vardaan's FastPages" /><link rel="shortcut icon" type="image/x-icon" href="/FastPages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/FastPages/">Vardaan&#39;s FastPages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/FastPages/about/">About Me</a><a class="page-link" href="/FastPages/notes/">Computer Science Notes</a><a class="page-link" href="/FastPages/categories/">Tags</a><a class="page-link" href="/FastPages/javascript/overview">JavaScript!</a><a class="page-link" href="/FastPages/_pages/05_themechanger.html">Theme Changer</a><a class="page-link" href="/FastPages/_pages/06_numberguessersass.html">Number Guesser v3</a><a class="page-link" href="/FastPages/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Hacks for Simulations Group</h1><p class="page-description">Building a simulation or interaction using lists and iteration</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-05-01T00:00:00-05:00" itemprop="datePublished">
+        May 1, 2023
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Vardaan Sinha</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      18 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/FastPages/categories/#student">student</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Vocabulary">Vocabulary </a></li>
+<li class="toc-entry toc-h2"><a href="#Simulations/Interactions">Simulations/Interactions </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Why-use-simulations?">Why use simulations? </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Lists">Lists </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#What-are-Lists?">What are Lists? </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Nested-Lists">Nested Lists </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Uses-of-Nested-lists">Uses of Nested lists </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Iteration">Iteration </a></li>
+<li class="toc-entry toc-h2"><a href="#Libaries">Libaries </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#APIs">APIs </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Dictionaries">Dictionaries </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#What-are-Dictionaries?">What are Dictionaries? </a></li>
+<li class="toc-entry toc-h3"><a href="#What-are-the-types-of-Dictionaries?">What are the types of Dictionaries? </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Ordered-Dictionaries">Ordered Dictionaries </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#How-to-create-an-ordered-dictionary?">How to create an ordered dictionary? </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Regular-Dictionaries">Regular Dictionaries </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#How-to-create-a-regular-dictionary?">How to create a regular dictionary? </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Code-Examples">Code Examples </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
+<li class="toc-entry toc-h2"><a href="#Visual-or-Written-Description-Comparing-Lists-and-Dictionaries">Visual or Written Description Comparing Lists and Dictionaries </a></li>
+<li class="toc-entry toc-h2"><a href="#Kahoot-Score-Out-of-10">Kahoot Score Out of 10 </a></li>
+<li class="toc-entry toc-h2"><a href="#Utilization-of-Dictionaries/Lists">Utilization of Dictionaries/Lists </a></li>
+<li class="toc-entry toc-h2"><a href="#Simulation-for-Random-Number-Generator:-Two-Player-Game">Simulation for Random Number Generator: Two Player Game </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-05-01-P4Y-Simulation-Lists-Iteration.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Vocabulary">
+<a class="anchor" href="#Vocabulary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vocabulary<a class="anchor-link" href="#Vocabulary"> </a>
+</h2>
+<ul>
+<li>
+<em>Iteration</em>  - Repitition of a Process <br>
+</li>
+<li>
+<em><code>For Loop</code></em> - FOR LOOP repeats a function for a set number of times; I is the number of times repeated <br>
+</li>
+<li>
+<em><code>While Loop</code></em>  - The while loop is used to repeat a section of code an unknown number of times until a specific condition is met <br>
+</li>
+<li>
+<em>Initialization</em> - What sets the counter variable to a starting value. For example (var i = 0) represents an initial value of 0. <br>
+</li>
+<li>
+<em>Condition</em> - Allows the computer to know whether or not to keep repeating the loop.</li>
+<li>
+<em>increment/decrement</em> - Modifies the counter variable after each repetition.</li>
+<li>
+<em>Indexing</em> / <em>List Index</em> - The position of an element in a list, starting from 0 <br>
+</li>
+<li>
+<em><code>append</code></em>, <em><code>remove</code></em>, <em><code>pop</code></em> - Various methods, append adds an element to the end, remove removes at an index, and pop removes the last item. <br>
+</li>
+<li>
+<em>Elements [in a list]</em> - An item in a list. <br>
+</li>
+<li>
+<em>Nesting</em> - Having one data type or function inside another data type or function, such as lists or loops. <br>
+</li>
+<li>
+<em>array</em> - Another name for a list, depends on the language <br>
+</li>
+<li>
+<em>Key</em> - the unique identifier associated with a value in a dictionary, such as name <br>
+</li>
+<li>
+<em>Value</em> - the data associated with a key in a dictionary, such as age <br>
+</li>
+<li>
+<em>Pair</em> - a key-value combination in a dictionary, such as a person's name + age <br>
+</li>
+<li>
+<em>Mutable</em> - the ability to be changed or modified <br>
+</li>
+<li>
+<em>Tuple</em> - an immutable ordered sequence of elements, similar to a list <br>
+</li>
+<li>
+<em>Insertion</em> - the process of adding a new key-value pair to a dictionary <br>
+</li>
+<li>
+<em>Deletion</em> -  the process of removing a key-value pair from a dictionary <br>
+</li>
+<li>
+<em>Keys method/<code>keys()</code></em> - a built-in Python function that returns a list of all keys in a dictionary <br>
+</li>
+<li>
+<em>Values method/<code>values()</code></em> - a built-in Python function that returns a list of all values in a dictionary <br>
+</li>
+<li>
+<em>Items method/<code>items()</code></em> - a built-in Python function that returns a list of all key-value pairs in a dictionary as tuples <br>
+</li>
+<li>
+<em>Update method/<code>update()</code></em> - a built-in Python function that updates a dictionary with key-value pairs from another dictionary or iterable <br>
+</li>
+<li>
+<em>Clear method/<code>clear()</code></em> - a built-in Python function that removes all key-value pairs from a dictionary <br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>Give an example of iteration. <strong>An example of an iteration is a searching algorithm, such as a binary search, when a program is going through each entry in a list or dataset in order to search for a certain value.</strong>
+</li>
+<li>What is the difference between a for loop and while loop? That is, when would you use a for loop and when would you use a while loop? <strong>A for loop is used when a certain conditional needs to be repeated an n number of times, and a while loop is when a certain conditional keeps going until another condition is met.</strong>
+</li>
+<li>In the APCSP AP exam, what number do indexes start with? <strong>Indexes start with the number 1.</strong>
+</li>
+<li>Are dictionaries and lists mutable? <strong>Yes, since entries can be added, edited, or removed.</strong>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simulations/Interactions">
+<a class="anchor" href="#Simulations/Interactions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simulations/Interactions<a class="anchor-link" href="#Simulations/Interactions"> </a>
+</h2>
+<p>Building a simulation o#r interaction using lists and iteration in VS Code can be accomplished using a few simple steps:</p>
+<ol>
+<li>
+<p><strong>Define your data</strong>: First, you need to define the data that your simulation will be working with. This could be a list of numbers, a list of strings, or any other type of data that your simulation will be manipulating.</p>
+</li>
+<li>
+<p><strong>Write your simulation code:</strong> Once you have defined your data, you can start writing the code for your simulation. This code will typically involve iterating over your list of data, performing some operation on each item in the list, and updating the list accordingly.</p>
+</li>
+<li>
+<p><strong>Test your simulation:</strong> After you have written your simulation code, it is important to test it to make sure it is working as expected. You can do this by running your code and checking the output to see if it matches what you expect.</p>
+</li>
+<li>
+<p><strong>Refine your simulation:</strong> Once you have tested your simulation, you may need to refine it based on the results. This could involve tweaking the code to make it more efficient, adding new features, or fixing any bugs that you have discovered.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Why-use-simulations?">
+<a class="anchor" href="#Why-use-simulations?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why use simulations?<a class="anchor-link" href="#Why-use-simulations?"> </a>
+</h4>
+<ul>
+<li>Simulations can be useful because they can emulate real world situations without needing excessive resources (ex: money), time, or equipment. For example, a simulation of the effectiveness of a new seatbelt or airbag can be performed by simulating car crashes. This would be better than doing it in real life because you wouldn't want to place people in cars and then crash them for obvious reasons.</li>
+<li>However, simulatins do assume things about the real world and can have biases. They can be oversimplified because the real world often has more complications and factors that can affect something. In the case of our car crash simulation, other things can have a big impact, such as the weather and experience of the driver. However, these things can sometimes be held constant in the simulations.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>Explain an example of something you could simulate. <strong>If I wanted to simulate a human jetpack flight, I could make a program to simulate certain conditions.</strong>
+</li>
+<li>Why are simulations useful and important? <strong>Simulations are useful and important, since they are much more cost-efficient and allow for testing of certain things without actually having to get up and test it out physically. They can help majorly with important decisions.</strong>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here's a simple example of a simulation in Python that uses lists and iteration to calculate the average of a list of numbers:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Initialize the sum and count variables</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Iterate over the list of numbers, adding each number to the sum</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">number</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Calculate the average of the list of numbers</span>
+<span class="n">average</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">/</span> <span class="n">count</span>
+
+<span class="c1"># Print the average</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The average of the list is:"</span><span class="p">,</span> <span class="n">average</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The average of the list is: 3.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This code defines a list of numbers, iterates over the list to calculate the sum and count of the numbers, and then calculates the average by dividing the sum by the count. Finally, it prints the average to the console.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lists">
+<a class="anchor" href="#Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists<a class="anchor-link" href="#Lists"> </a>
+</h2>
+<ul>
+<li>Iteration statements can be used to traverse a list</li>
+<li>Knowldege of exisiting algorithms that use iteration can help in constructing new algorithms. Some are:<ul>
+<li>Determining a minimum or maximum value in a list</li>
+<li>Computing a sum or average of a list of numbers</li>
+</ul>
+</li>
+</ul>
+<h3 id="What-are-Lists?">
+<a class="anchor" href="#What-are-Lists?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are Lists?<a class="anchor-link" href="#What-are-Lists?"> </a>
+</h3>
+<ul>
+<li>Lists are <strong>sequences of values.</strong>
+</li>
+<li>Each sequence is demarcated with an <strong>index</strong> starting from 0. This is known as <strong>base 0 indexing.</strong>
+</li>
+<li>In memory, it is stored as a variable name with multiple pointers to each variable stored in a certain order</li>
+<li>Lists can also be called arrays</li>
+<li>Lists have methods that act upon the list and change them. This moves the pointers within RAM to change the parts of the list.</li>
+</ul>
+<h4 id="Nested-Lists">
+<a class="anchor" href="#Nested-Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nested Lists<a class="anchor-link" href="#Nested-Lists"> </a>
+</h4>
+<h5 id="Uses-of-Nested-lists">
+<a class="anchor" href="#Uses-of-Nested-lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uses of Nested lists<a class="anchor-link" href="#Uses-of-Nested-lists"> </a>
+</h5>
+<p>Placing lists within lists allows you to have arrays of similar data together, and create complexity. <br></p>
+<p><strong>Some uses include:</strong></p>
+<ul>
+<li>Creating 2d Arrays </li>
+<li>Storing similar, but slightly different categories (sublists)</li>
+<li>Create a matrix</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Iteration">
+<a class="anchor" href="#Iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Iteration<a class="anchor-link" href="#Iteration"> </a>
+</h2>
+<p>Iterative statements are also called <strong>while loops</strong>, and they repeat themselves over and over until the condition for stopping is met.</p>
+<ul>
+<li>In College Board's Pseudocode, the first is a REPEAT n TIMES loop, where the n represents some number.</li>
+</ul>
+<p>The second type of loop is a REPEAT UNTIL (condition) loop, where the loop will continue to run until a condition is met.</p>
+<p>Conceptually, a while loop is very similar to an if conditional, except that a while is continually executed until it's no longer true and an if is only executed once.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>Describe a situation where you would need iteration. <strong>Again, iteration would be needed when attempting to implement a searching algorithm, as the program would have to run through each entry in the dataset in order to meet the condition.</strong>
+</li>
+<li>Describe the difference between a "REPEAT n TIMES" loop VS a "REPEAT UNTIL (condition)" loop. <mark>it is important you know this for the AP Exam</mark> <strong>REPEAT n TIMES is a for loop, where a certain action is repeated a set number of times. On the other hand, a REPEAT UNTIL (condition) statement is a while loop, which keeps repeating based on whether or not a condition is met.</strong>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libaries">
+<a class="anchor" href="#Libaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Libaries<a class="anchor-link" href="#Libaries"> </a>
+</h2>
+<ul>
+<li>A software library contains procedures that may be used in creating new programs. </li>
+<li>Existing code segments can come from internal or external sources, such as libaries or previously written code. </li>
+<li>The use of libaries simplifies the task of creating complex programs.</li>
+</ul>
+<h3 id="APIs">
+<a class="anchor" href="#APIs" aria-hidden="true"><span class="octicon octicon-link"></span></a>APIs<a class="anchor-link" href="#APIs"> </a>
+</h3>
+<p>Application program interfaces (APIs) are specifications for how the procedures in a libary behave and can be used as documentation for an API/libary is necessary in understanding the behaviors provided by the API and how to use them.</p>
+<p>A file that contains procedures that can be used in a program is considered a libary.</p>
+<ul>
+<li>API provides specifications for how procedures in a library behave and can be used. </li>
+<li>Many companies use APIs for programmers to interact with their products. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>What are some libraries that we've learned about? What are their advantages/disadvantages? <strong>We have learned about pandas and numpy. Some advantages are that we can implement many more data analysis features into our programs, but some disadvantages could be that some libraries are not as well documented as others, allowing only for limited use of its features.</strong>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dictionaries">
+<a class="anchor" href="#Dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dictionaries<a class="anchor-link" href="#Dictionaries"> </a>
+</h2>
+<h3 id="What-are-Dictionaries?">
+<a class="anchor" href="#What-are-Dictionaries?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are Dictionaries?<a class="anchor-link" href="#What-are-Dictionaries?"> </a>
+</h3>
+<ul>
+<li>an unordered collection of key-value pairs, where each key is <strong>assigned</strong> and associated with a specific value</li>
+<li>known as associative arrays, maps, or hash tables in some programming languages</li>
+<li>used to store and retrieve data efficiently, as they allow fast access to values based on their associated keys</li>
+<li>useful for a wide range of tasks, such as storing, indexing, and counting</li>
+</ul>
+<h3 id="What-are-the-types-of-Dictionaries?">
+<a class="anchor" href="#What-are-the-types-of-Dictionaries?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are the types of Dictionaries?<a class="anchor-link" href="#What-are-the-types-of-Dictionaries?"> </a>
+</h3>
+<h2 id="Ordered-Dictionaries">
+<a class="anchor" href="#Ordered-Dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ordered Dictionaries<a class="anchor-link" href="#Ordered-Dictionaries"> </a>
+</h2>
+<ul>
+<li>Iterates over keys and values in the same order that the keys were inserted </li>
+<li>If an entry is deleted and reinserted, then it will be moved to the end of the dictionary</li>
+<li>Specially designed to keep its items ordered</li>
+<li>Useful in situations where the order of insertion is important and when you need to process data in a specific order</li>
+<li>If the order of the data is important, an ordered dictionary is the better choice</li>
+</ul>
+<h3 id="How-to-create-an-ordered-dictionary?">
+<a class="anchor" href="#How-to-create-an-ordered-dictionary?" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to create an ordered dictionary?<a class="anchor-link" href="#How-to-create-an-ordered-dictionary?"> </a>
+</h3>
+<ol>
+<li>Import OrderedDict from collections </li>
+<li>Create an empty ordered dictionary by instantiating OrderedDict without providing arguments to the constructor</li>
+<li>Add key-value pairs to the dictionary by providing a key in square brackets ([]) and assigning a value to that key. </li>
+<li>Print the ordered dictionary </li>
+<li>Iterate over the items in the ordered dictionary </li>
+</ol>
+<h2 id="Regular-Dictionaries">
+<a class="anchor" href="#Regular-Dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Regular Dictionaries<a class="anchor-link" href="#Regular-Dictionaries"> </a>
+</h2>
+<ul>
+<li>Mutable; can add, remove, and modify key-value pairs after they have been created</li>
+<li>Used to store data values in key:value pairs</li>
+<li>Can be iterated over using loops</li>
+<li>If order is not important, a regular dictionary may provide better performance</li>
+</ul>
+<h3 id="How-to-create-a-regular-dictionary?">
+<a class="anchor" href="#How-to-create-a-regular-dictionary?" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to create a regular dictionary?<a class="anchor-link" href="#How-to-create-a-regular-dictionary?"> </a>
+</h3>
+<ol>
+<li>Create a variable name which will be the name of the dictionary</li>
+<li>Assign the variable to an empty set of curly braces {}</li>
+<li>Create a dictionary with the dict() OR empty curly brackets </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>Compare and contrast lists and dictionaries. <strong>Lists are just aggregations of values, while dictionaries have key-value pairs.</strong>
+</li>
+<li>Do dictionary keys need to be unique? <strong>Yes, dictionary keys need to be unique.</strong>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">folklore_album</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Folklore"</span><span class="p">,</span>
+    <span class="s2">"artist"</span><span class="p">:</span> <span class="s2">"Taylor Swift"</span><span class="p">,</span>
+    <span class="s2">"year"</span><span class="p">:</span> <span class="mi">2020</span><span class="p">,</span>
+    <span class="s2">"genre"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Alternative/Indie"</span><span class="p">,</span> <span class="s2">"Pop"</span><span class="p">],</span>
+    <span class="s2">"tracks"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s2">"the 1"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="s2">"cardigan"</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="s2">"the last great american dynasty"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="s2">"exile (ft. Bon Iver)"</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="s2">"my tears ricochet"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="s2">"mirrorball"</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="p">[</span><span class="s2">"seven"</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="p">[</span><span class="s2">"august"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="p">[</span><span class="s2">"this is me trying"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="p">[</span><span class="s2">"illicit affairs"</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+        <span class="mi">11</span><span class="p">:</span> <span class="p">[</span><span class="s2">"invisible string"</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+        <span class="mi">12</span><span class="p">:</span> <span class="p">[</span><span class="s2">"mad woman"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">13</span><span class="p">:</span> <span class="p">[</span><span class="s2">"epiphany"</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+        <span class="mi">14</span><span class="p">:</span> <span class="p">[</span><span class="s2">"betty"</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+        <span class="mi">15</span><span class="p">:</span> <span class="p">[</span><span class="s2">"peace"</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+        <span class="mi">16</span><span class="p">:</span> <span class="p">[</span><span class="s2">"hoax"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">17</span><span class="p">:</span> <span class="p">[</span><span class="s2">"the lakes"</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Printing the dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">folklore_album</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'title': 'Folklore', 'artist': 'Taylor Swift', 'year': 2020, 'genre': ['Alternative/Indie', 'Pop'], 'tracks': {1: ['the 1', 7], 2: ['cardigan', 19], 3: ['the last great american dynasty', 7], 4: ['exile (ft. Bon Iver)', 10], 5: ['my tears ricochet', 7], 6: ['mirrorball', 6], 7: ['seven', 5], 8: ['august', 7], 9: ['this is me trying', 7], 10: ['illicit affairs', 8], 11: ['invisible string', 6], 12: ['mad woman', 7], 13: ['epiphany', 6], 14: ['betty', 8], 15: ['peace', 9], 16: ['hoax', 7], 17: ['the lakes', 6]}}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">folklore_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"track #"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">": "</span> <span class="o">+</span> <span class="n">folklore_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"    my rating: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">folklore_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">"/10"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>track #1: the 1
+    my rating: 7/10
+track #2: cardigan
+    my rating: 19/10
+track #3: the last great american dynasty
+    my rating: 7/10
+track #4: exile (ft. Bon Iver)
+    my rating: 10/10
+track #5: my tears ricochet
+    my rating: 7/10
+track #6: mirrorball
+    my rating: 6/10
+track #7: seven
+    my rating: 5/10
+track #8: august
+    my rating: 7/10
+track #9: this is me trying
+    my rating: 7/10
+track #10: illicit affairs
+    my rating: 8/10
+track #11: invisible string
+    my rating: 6/10
+track #12: mad woman
+    my rating: 7/10
+track #13: epiphany
+    my rating: 6/10
+track #14: betty
+    my rating: 8/10
+track #15: peace
+    my rating: 9/10
+track #16: hoax
+    my rating: 7/10
+track #17: the lakes
+    my rating: 6/10
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Code-Examples">
+<a class="anchor" href="#Code-Examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Examples<a class="anchor-link" href="#Code-Examples"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Reverse a list utilizing features of lists and iteration</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">original_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"List before reverse : "</span><span class="p">,</span><span class="n">original_list</span><span class="p">)</span>
+<span class="n">reversed_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">original_list</span><span class="p">:</span>
+  <span class="n">reversed_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">+</span> <span class="n">reversed_list</span>
+<span class="c1"># print("List after reverse : ", reversed_list)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>List before reverse :  [1, 2, 3, 4, 5]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similar to insertion sort, this algorithm takes an unsorted array and returns a sorted array. Unlike insertion sort where you iterate through the each element and move the smaller elements to the front, this algorithm starts at the beginning and swaps the position of every element in the array</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"array before sort </span><span class="si">{</span><span class="nb">list</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)):</span> <span class="c1"># repeats through length of the array</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># shift number in slot i to the right</span>
+                <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span> <span class="c1"># shift value left into slot i</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+
+<span class="n">IS</span> <span class="o">=</span> <span class="n">insertion_sort</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="c1"># print(f"array after sort {list}")</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>array before sort [9, 8, 4, 3, 5, 2, 6, 7, 1, 0]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is a list comprehension example, using lists to create lists.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below, only songs in the folklore album that have less than 7 characters in their titles are printed.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TS_folklore</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"exile"</span><span class="p">,</span> <span class="s2">"my tears ricochet"</span><span class="p">,</span> <span class="s2">"this is me trying"</span><span class="p">,</span> <span class="s2">"illicit affairs"</span><span class="p">,</span> <span class="s2">"august"</span><span class="p">,</span> <span class="s2">"mirrorball"</span><span class="p">,</span> <span class="s2">"betty"</span><span class="p">,</span> <span class="s2">"mad woman"</span><span class="p">,</span> <span class="s2">"epiphany"</span><span class="p">,</span> <span class="s2">"peace"</span><span class="p">,</span> <span class="s2">"cardigan"</span><span class="p">]</span>
+
+<span class="c1"># this list is only songs that have less than 10 characters in the title</span>
+<span class="n">TS_folklore_updated</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">TS_folklore</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"These are the songs in Taylor Swift's folklore album that have less than 7 characters in their title"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">TS_folklore_updated</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>These are the songs in Taylor Swift's folklore album that have less than 7 characters in their title
+['exile', 'august', 'betty', 'peace']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below, only songs that have a rating greater than 7 will be printed.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TS_folklore_ratings</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"exile"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">"my tears ricochet"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">"this is me trying"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">"illicit affairs"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">"august"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"mirrorball"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"betty"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">"mad woman"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">"epiphany"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"peace"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"cardigan"</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="n">TS_folklore_best</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">TS_folklore_ratings</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="o">&gt;</span><span class="mi">7</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"These are the songs in Taylor Swift's folklore album that I give a rating greater than 7"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">TS_folklore_best</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>These are the songs in Taylor Swift's folklore album that I give a rating greater than 7
+{'exile': 8, 'illicit affairs': 8, 'peace': 10, 'cardigan': 10}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>How is list comprehension similar to iteration? <strong>Both list comprehension and iteration involve a repetition of a certain code snippet until a certain conditional is met.</strong>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h2>
+<p>(0.1 points) Create a visual or written description. Objective is to compare lists and dictionaries.</p>
+<p>(0.6 points) Create your own dictionary/list and use sorting algorithms to perform operations on them. (Use playlist maker as an example of what we expect ~ Make something creative and useful)</p>
+<p>(0.2 points) Build your own simulation such as a random number generator or slot machine (Try using a list!)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Visual-or-Written-Description-Comparing-Lists-and-Dictionaries">
+<a class="anchor" href="#Visual-or-Written-Description-Comparing-Lists-and-Dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visual or Written Description Comparing Lists and Dictionaries<a class="anchor-link" href="#Visual-or-Written-Description-Comparing-Lists-and-Dictionaries"> </a>
+</h2>
+<p><strong>Written:</strong></p>
+<p>Lists are ordered, and they have an index starting with 1 in the AP CSP course. Lists are just aggregations of values, such as a dataset, and are also mutable. Lists are very easy to use, create, and edit. However, it can be very inefficient to search for certain values in a list. Something great about lists is that they are ordered, so if a certain program requires an ordered dataset, lists are very easily implemented.</p>
+<p>On the other hand, dictionaries are unordered, and they use key-value pairs rather than a starting index so to speak. Similar to lists, dictionaries are also mutable. Contrasting to lists, dictionaries are much more easy to sort through and find certain data values, since they are already organized through key-value pairs. However, a disadvantage of dictionaries that is not seen in lists, is that they are unordered, so for certain programs that need to have an ordered dataset as such, it is less efficient to use dictionaries.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kahoot-Score-Out-of-10">
+<a class="anchor" href="#Kahoot-Score-Out-of-10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kahoot Score Out of 10<a class="anchor-link" href="#Kahoot-Score-Out-of-10"> </a>
+</h2>
+<p>I got a <strong>9/10</strong> on the Kahoot. I made one careless mistake on one of the earlier questions, and this isn't something I'm too worried about. For the most part, I am okay with the CB questions in relation to iterations, conditionals, etc, so I just need to keep revising the concepts before the AP Exam and hopefully I should be fine.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Utilization-of-Dictionaries/Lists">
+<a class="anchor" href="#Utilization-of-Dictionaries/Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Utilization of Dictionaries/Lists<a class="anchor-link" href="#Utilization-of-Dictionaries/Lists"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span> 
+
+<span class="n">questions</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"This is a quiz based on the simulations lesson."</span><span class="p">)</span>
+
+<span class="c1"># Setting 'q' and 'a' parameters</span>
+<span class="k">def</span> <span class="nf">question_answer</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="c1"># prints q</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Question: "</span> <span class="o">+</span> <span class="n">q</span><span class="p">)</span>
+    <span class="c1"># This is the user's input/response to the question.</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Answer: "</span> <span class="o">+</span> <span class="n">resp</span><span class="p">)</span>
+
+    <span class="c1"># The correct +=1 adds a correct answer.</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">resp</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Correct!"</span><span class="p">)</span>
+        <span class="k">global</span> <span class="n">correct</span>
+        <span class="n">correct</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect!"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">resp</span>
+
+<span class="n">q1</span> <span class="o">=</span> <span class="n">question_answer</span><span class="p">(</span><span class="s2">"TRUE OR FALSE: Simulations can be biased."</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">)</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">question_answer</span><span class="p">(</span><span class="s2">"TRUE OR FALSE: Dictionaries are ordered"</span><span class="p">,</span> <span class="s2">"false"</span><span class="p">)</span>
+<span class="n">q3</span> <span class="o">=</span> <span class="n">question_answer</span><span class="p">(</span><span class="s2">"TRUE OR FALSE: It is easy to find values in large lists."</span><span class="p">,</span> <span class="s2">"false"</span><span class="p">)</span>
+
+<span class="c1"># If statement based on the amount of questions that user gets correct</span>
+<span class="k">if</span> <span class="n">correct</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'You got </span><span class="si">{</span><span class="n">correct</span><span class="si">}</span><span class="s1">/3 correct.'</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" that's a "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">correct</span> <span class="o">/</span> <span class="n">questions</span><span class="p">)</span><span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">+</span> <span class="s2">"%"</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"The answers in order were 'TRUE', 'FALSE', and 'FALSE' for next time."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Great job! You got a 100%.'</span><span class="p">)</span>
+
+<span class="c1"># DICTIONARY COMPONENT</span>
+<span class="c1"># This allows for the user's answers to be recorded and given back to them after they complete the quiz.</span>
+<span class="n">PyQuiz</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Q1"</span><span class="p">:</span> <span class="n">q1</span><span class="p">,</span>
+    <span class="s2">"Q2"</span><span class="p">:</span> <span class="n">q2</span><span class="p">,</span>
+    <span class="s2">"Q3"</span><span class="p">:</span> <span class="n">q3</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Your recorded answers for review:"</span><span class="p">,</span> <span class="n">PyQuiz</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This is a quiz based on the simulations lesson.
+Question: TRUE OR FALSE: Simulations can be biased.
+Answer: true
+Correct!
+Question: TRUE OR FALSE: Dictionaries are ordered
+Answer: false
+Correct!
+Question: TRUE OR FALSE: It is easy to find values in large lists.
+Answer: false
+Correct!
+Great job! You got a 100%.
+Your recorded answers for review: {'Q1': 'true', 'Q2': 'false', 'Q3': 'false'}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simulation-for-Random-Number-Generator:-Two-Player-Game">
+<a class="anchor" href="#Simulation-for-Random-Number-Generator:-Two-Player-Game" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simulation for Random Number Generator: Two Player Game<a class="anchor-link" href="#Simulation-for-Random-Number-Generator:-Two-Player-Game"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">num1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Player 1 got </span><span class="si">{</span><span class="n">num1</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Player 2 got </span><span class="si">{</span><span class="n">num2</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">num1</span> <span class="o">&gt;</span> <span class="n">num2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">num1</span><span class="si">}</span><span class="s2"> is greater than </span><span class="si">{</span><span class="n">num2</span><span class="si">}</span><span class="s2">, so Player 1 wins!"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">num1</span> <span class="o">&lt;</span> <span class="n">num2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">num2</span><span class="si">}</span><span class="s2"> is greater than </span><span class="si">{</span><span class="n">num1</span><span class="si">}</span><span class="s2">, so Player 2 wins!"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"The two numbers are equal. It is a tie."</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Player 1 got 2.
+Player 2 got 6.
+6 is greater than 2, so Player 2 wins!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="vardaansinha/FastPages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/FastPages/student/2023/05/01/P4Y-Simulation-Lists-Iteration.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/FastPages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://vardaansinha.github.io/FastPages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/FastPages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
