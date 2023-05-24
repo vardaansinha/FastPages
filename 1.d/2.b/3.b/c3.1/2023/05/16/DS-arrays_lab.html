@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python 2D Iteration and Animation | Vardaan’s FastPages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Python 2D Iteration and Animation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python. The objective is to build a stronger foundation in iteration and data. Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript." />
+<meta property="og:description" content="Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python. The objective is to build a stronger foundation in iteration and data. Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript." />
+<link rel="canonical" href="https://vardaansinha.github.io/FastPages/1.d/2.b/3.b/c3.1/2023/05/16/DS-arrays_lab.html" />
+<meta property="og:url" content="https://vardaansinha.github.io/FastPages/1.d/2.b/3.b/c3.1/2023/05/16/DS-arrays_lab.html" />
+<meta property="og:site_name" content="Vardaan’s FastPages" />
+<meta property="og:image" content="https://vardaansinha.github.io/FastPages/images/monkeys.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-16T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://vardaansinha.github.io/FastPages/images/monkeys.png" />
+<meta property="twitter:title" content="Python 2D Iteration and Animation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-16T00:00:00-05:00","datePublished":"2023-05-16T00:00:00-05:00","description":"Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python. The objective is to build a stronger foundation in iteration and data. Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript.","headline":"Python 2D Iteration and Animation","image":"https://vardaansinha.github.io/FastPages/images/monkeys.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://vardaansinha.github.io/FastPages/1.d/2.b/3.b/c3.1/2023/05/16/DS-arrays_lab.html"},"url":"https://vardaansinha.github.io/FastPages/1.d/2.b/3.b/c3.1/2023/05/16/DS-arrays_lab.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/FastPages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://vardaansinha.github.io/FastPages/feed.xml" title="Vardaan's FastPages" /><link rel="shortcut icon" type="image/x-icon" href="/FastPages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/FastPages/">Vardaan&#39;s FastPages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/FastPages/about/">About Me</a><a class="page-link" href="/FastPages/notes/">Computer Science Notes</a><a class="page-link" href="/FastPages/categories/">Tags</a><a class="page-link" href="/FastPages/javascript/overview">JavaScript!</a><a class="page-link" href="/FastPages/_pages/05_themechanger.html">Theme Changer</a><a class="page-link" href="/FastPages/_pages/06_numberguessersass.html">Number Guesser v3</a><a class="page-link" href="/FastPages/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python 2D Iteration and Animation</h1><p class="page-description">Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python.  The objective is to build a stronger foundation in iteration and data.  Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-05-16T00:00:00-05:00" itemprop="datePublished">
+        May 16, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      11 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/FastPages/categories/#1.D">1.D</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/FastPages/categories/#2.B">2.B</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/FastPages/categories/#3.B">3.B</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/FastPages/categories/#C3.1">C3.1</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/vardaansinha/FastPages/tree/master/_notebooks/2023-05-16-DS-arrays_lab.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/FastPages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/vardaansinha/FastPages/master?filepath=_notebooks%2F2023-05-16-DS-arrays_lab.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/FastPages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/vardaansinha/FastPages/blob/master/_notebooks/2023-05-16-DS-arrays_lab.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/FastPages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fvardaansinha%2FFastPages%2Fblob%2Fmaster%2F_notebooks%2F2023-05-16-DS-arrays_lab.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/FastPages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#2D-Programming-and-Resources">2D Programming and Resources </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Python-2D-array">Python 2D array </a></li>
+<li class="toc-entry toc-h3"><a href="#JavaScript-2D-array">JavaScript 2D array </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Monkey-Jumpers-Poem">Monkey Jumpers Poem </a></li>
+<li class="toc-entry toc-h2"><a href="#Animation,-the-Energetic-versus-Lazy-Programmer-methods">Animation, the Energetic versus Lazy Programmer methods </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-05-16-DS-arrays_lab.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2D-Programming-and-Resources">
+<a class="anchor" href="#2D-Programming-and-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>2D Programming and Resources<a class="anchor-link" href="#2D-Programming-and-Resources"> </a>
+</h2>
+<blockquote>
+<p>There are lots of applications for 2D data.  Common terms in 2D are tabular data, row/columns, matrix, etc.  Nested iterative loops are often used to find or discover each cell in a 2D array.</p>
+<ul>
+<li>2D samples and challenges in Jupyter.  wget link:<a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-05-16-DS-arrays_lab.ipynb-">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-05-16-DS-arrays_lab.ipynb-</a> Mario animations in JS, these are markdown code examples.<ul>
+<li>Assets  <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_data/mario_metadata.yml">metadata yml</a>, wget and place in _data directory;  <a href="https://github.com/nighthawkcoders/APCSP/blob/master/images/mario_animation.png">sprite</a>, download and place in images directory </li>
+<li>Code to interact with Sprite Animations <a href="https://nighthawkcoders.github.io/APCSP/frontend/mario">runtime</a>, <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_posts/2022-07-19-PBL-mario-sprite.md">wget code</a>
+</li>
+<li>Game starters <a href="https://nighthawkcoders.github.io/APCSP/frontend/mario2">runtime</a>, <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_posts/2022-07-19-PBL-mario-animation.md">wget imperative code</a>, <a href="https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-19-PBL-mario-animation-oop.md">wget oop code</a>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python-2D-array">
+<a class="anchor" href="#Python-2D-array" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python 2D array<a class="anchor-link" href="#Python-2D-array"> </a>
+</h3>
+<blockquote>
+<p>Example of pre-populating 2D array and printing using 3 different styles</p>
+<ul>
+<li>Candy Challenge:print a christmas tree and trunk</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd">* Creator: Nighthawk Coding Society</span>
+<span class="sd">2D arrays</span>
+<span class="sd">"""</span>
+
+<span class="c1"># Classic nested loops using ij indexes, this shows 2 dimensions</span>
+<span class="k">def</span> <span class="nf">print_matrix1</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Classic nested loops using ij indexes"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)):</span>  <span class="c1"># outer loop (i), built on length of matrix (rows)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>  <span class="c1"># inner loop (j), built on length of items (columns)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>  <span class="c1"># [i][j] is 2D representation, end changes newline to space</span>
+        <span class="nb">print</span><span class="p">()</span>
+
+
+<span class="c1"># Enhanced nested for loops, row and col variables</span>
+<span class="k">def</span> <span class="nf">print_matrix2</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Enhanced nested for loops"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">:</span>  <span class="c1"># short hand row iterator, index is not required</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>  <span class="c1"># short hand column iterator</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
+
+
+<span class="c1"># For loop with shortcut (*) row expansion</span>
+<span class="k">def</span> <span class="nf">print_matrix3</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"For loop with shortcut (*) row expansion"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">row</span><span class="p">)</span>  <span class="c1"># pythons has (*) that is one line expansion of row into columns</span>
+
+
+<span class="k">def</span> <span class="nf">test_matrices</span><span class="p">():</span>
+    <span class="c1"># setup some text matrices</span>
+    <span class="n">keypad</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+              <span class="p">[</span><span class="s2">" "</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">" "</span><span class="p">]]</span>
+
+    <span class="n">keyboard</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"`"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">,</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">"="</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"Q"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"W"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"R"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"T"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"U"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"I"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"P"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"["</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"]"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"S"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"D"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"G"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"H"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"J"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"K"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"L"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">";"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"'"</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"Z"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"X"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"N"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"M"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">","</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"."</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">]]</span>
+
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># binary</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="c1"># decimal</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="s2">"D"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">]</span> <span class="c1"># hexadecimal</span>
+            <span class="p">]</span>
+    
+
+    <span class="c1"># pack into a list of matrices with titles</span>
+    <span class="n">matrices</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="s2">"Keypad"</span><span class="p">,</span> <span class="n">keypad</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s2">"Keyboard"</span><span class="p">,</span> <span class="n">keyboard</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s2">"Number Systems"</span><span class="p">,</span> <span class="n">numbers</span><span class="p">]</span>
+    <span class="p">]</span>
+
+    <span class="c1"># loop 2D matrix with returning list in [key, value] arrangement</span>
+    <span class="k">for</span> <span class="n">title</span><span class="p">,</span> <span class="n">matrix</span> <span class="ow">in</span> <span class="n">matrices</span><span class="p">:</span>  <span class="c1"># unpack title and matrix as variables</span>
+        
+        <span class="c1"># formatted message with concatenation</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">),</span> <span class="s2">"x"</span><span class="p">,</span> <span class="s2">"~"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>  
+        
+        <span class="c1"># use three different methods</span>
+        <span class="n">print_matrix1</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+        <span class="n">print_matrix2</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+        <span class="n">print_matrix3</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+        <span class="c1"># blank link in between</span>
+        <span class="nb">print</span><span class="p">()</span>
+
+
+<span class="c1"># tester section</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">test_matrices</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Keypad 4 x ~3
+Classic nested loops using ij indexes
+1 2 3 
+4 5 6 
+7 8 9 
+  0   
+Enhanced nested for loops
+1 2 3 
+4 5 6 
+7 8 9 
+  0   
+For loop with shortcut (*) row expansion
+1 2 3
+4 5 6
+7 8 9
+  0  
+
+Keyboard 4 x ~24
+Classic nested loops using ij indexes
+` 1   2   3   4   5   6   7   8   9   0   -   = 
+    Q   W   E   R   T   Y   U   I     O   P   [   ]   \ 
+      A   S   D   F   G   H   J   K   L   ;   ' 
+        Z   X   C   V   B   N   M   ,   .   / 
+Enhanced nested for loops
+` 1   2   3   4   5   6   7   8   9   0   -   = 
+    Q   W   E   R   T   Y   U   I     O   P   [   ]   \ 
+      A   S   D   F   G   H   J   K   L   ;   ' 
+        Z   X   C   V   B   N   M   ,   .   / 
+For loop with shortcut (*) row expansion
+` 1   2   3   4   5   6   7   8   9   0   -   =
+    Q   W   E   R   T   Y   U   I     O   P   [   ]   \
+      A   S   D   F   G   H   J   K   L   ;   '
+        Z   X   C   V   B   N   M   ,   .   /
+
+Number Systems 3 x ~2
+Classic nested loops using ij indexes
+0 1 
+0 1 2 3 4 5 6 7 8 9 
+0 1 2 3 4 5 6 7 8 9 A B C D E F 
+Enhanced nested for loops
+0 1 
+0 1 2 3 4 5 6 7 8 9 
+0 1 2 3 4 5 6 7 8 9 A B C D E F 
+For loop with shortcut (*) row expansion
+0 1
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="JavaScript-2D-array">
+<a class="anchor" href="#JavaScript-2D-array" aria-hidden="true"><span class="octicon octicon-link"></span></a>JavaScript 2D array<a class="anchor-link" href="#JavaScript-2D-array"> </a>
+</h3>
+<blockquote>
+<p>Example below populate a 2D array.  Key concepts are ij loop and assignments.  Observe the object that is created in console.  Learn the basics of iteration through 2D array in JavaScript.</p>
+<ul>
+<li>Candy challenge:Work of pairs.  Create one of the Python examples (christmas tree, keyboard, ...). Use the element.append to output within the notebook.   As you work on JavaScript make sure your development enviornment is setup like JavaScript programmer.</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span>
+
+<span class="cm">/*</span>
+<span class="cm">* Creator: Nighthawk Coding Society</span>
+<span class="cm">Construct a two-dimensional array in JS</span>
+<span class="cm">*/</span>
+
+<span class="kd">var</span> <span class="nx">arr2D</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">cols</span> <span class="o">=</span> <span class="mf">4</span><span class="p">;</span>
+ 
+<span class="c1">// Loop to initialize 2D array elements</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">rows</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">arr2D</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span><span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">cols</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">arr2D</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"r:"</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">"c:"</span> <span class="o">+</span> <span class="nx">j</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2D</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">arr2D</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="fe1ed4a5-6411-4599-abb0-4cd1f3eb2200"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#fe1ed4a5-6411-4599-abb0-4cd1f3eb2200');
+
+/*
+* Creator: Nighthawk Coding Society
+Construct a two-dimensional array in JS
+*/
+
+var arr2D = [];
+var rows = 3;
+var cols = 4;
+ 
+// Loop to initialize 2D array elements
+for (var i = 0; i < rows; i++) {
+    arr2D[i]=[];
+    for (var j = 0; j < cols; j++) {
+        arr2D[i][j] = "r:" + i + "c:" + j;
+    }
+}
+console.log(arr2D);
+element.append(arr2D);
+
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Monkey-Jumpers-Poem">
+<a class="anchor" href="#Monkey-Jumpers-Poem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Monkey Jumpers Poem<a class="anchor-link" href="#Monkey-Jumpers-Poem"> </a>
+</h2>
+<blockquote>
+<p>Here are some of the key parts of these arrays</p>
+<ul>
+<li>Build ASCII monkeys, 5 different monkeys using ASCII Art for the "Monkey Jumpers" countdown poem</li>
+<li>ANSII Color codes are added to each Monkey</li>
+<li>Candy Challenge:Print monkeys horizontally versus vertically.</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd"> * Creator: Nighthawk Coding Society</span>
+<span class="sd"> * Mini Lab Name: Hello Series, featuring Monkey Jumpers Poem</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span> <span class="nn">time</span> <span class="c1"># used for delay</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>  <span class="c1"># jupyter specific clear</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>    
+    <span class="c1"># ANSI Color Codes</span>
+    <span class="n">Red</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u001b</span><span class="s2">[31m"</span>
+    <span class="n">Green</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u001b</span><span class="s2">[32m"</span>
+    <span class="n">Yellow</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u001b</span><span class="s2">[33m"</span>
+    <span class="n">Blue</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m"</span>
+    <span class="n">Magenta</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u001b</span><span class="s2">[35m"</span>
+
+    <span class="sd">""" 2D array data assignment """</span>
+    <span class="n">monkeys</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="n">Red</span><span class="p">,</span>
+            <span class="s2">"ʕง ͠° ͟ل͜ ͡°)ʔ "</span><span class="p">,</span>  <span class="c1"># [0][0] eyes</span>
+            <span class="s2">"  </span><span class="se">\\</span><span class="s2">_⏄_/  "</span><span class="p">,</span>  <span class="c1"># [0][1] chin</span>
+            <span class="s2">"  --0--   "</span><span class="p">,</span>  <span class="c1"># [0][2] body</span>
+            <span class="s2">"  ⎛   ⎞   "</span>  <span class="c1"># [0][3] legs</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="n">Green</span><span class="p">,</span>
+            <span class="s2">" ʕ༼ ◕_◕ ༽ʔ "</span><span class="p">,</span>  <span class="c1"># [1][0]</span>
+            <span class="s2">"  </span><span class="se">\\</span><span class="s2">_⎏_/  "</span><span class="p">,</span>
+            <span class="s2">"  ++1++  "</span><span class="p">,</span>
+            <span class="s2">"   ⌋ ⌊   "</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="n">Yellow</span><span class="p">,</span>
+            <span class="s2">" ʕ(▀ ⍡ ▀)ʔ"</span><span class="p">,</span>  <span class="c1"># [2][0]</span>
+            <span class="s2">"  </span><span class="se">\\</span><span class="s2">_⎐_/ "</span><span class="p">,</span>
+            <span class="s2">"  &lt;-2-&gt;  "</span><span class="p">,</span>
+            <span class="s2">"  〈  〉 "</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="n">Blue</span><span class="p">,</span>
+            <span class="s2">"ʕ ͡° ͜ʖ ° ͡ʔ"</span><span class="p">,</span>  <span class="c1"># [3][0]</span>
+            <span class="s2">"  </span><span class="se">\\</span><span class="s2">_⍾_/  "</span><span class="p">,</span>
+            <span class="s2">"  ==3==  "</span><span class="p">,</span>
+            <span class="s2">"  _/ </span><span class="se">\\</span><span class="s2">_  "</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="n">Magenta</span><span class="p">,</span>
+            <span class="s2">"  (◕‿◕✿) "</span><span class="p">,</span>  <span class="c1"># [4][0]</span>
+            <span class="s2">"  </span><span class="se">\\</span><span class="s2">_⍾_/ "</span><span class="p">,</span>  <span class="c1"># [4][1]</span>
+            <span class="s2">"  ==4==  "</span><span class="p">,</span>  <span class="c1"># [4][2]</span>
+            <span class="s2">"  _/ </span><span class="se">\\</span><span class="s2">_ "</span>  <span class="c1"># [4][3]</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+
+    <span class="sd">""" 2D array program logic """</span>
+    <span class="c1"># cycles through 2D array backwards</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">monkeys</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Nursery Rhyme"</span><span class="p">)</span>  <span class="c1"># identification message</span>
+
+        <span class="c1"># this print statement shows current count of Monkeys</span>
+        <span class="c1"># concatenation (+) of the loop variable and string to form a countdown message</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" little monkeys jumping on the bed..."</span><span class="p">)</span>
+
+        <span class="c1"># cycle through monkeys that are left in poem countdown</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># cycles through remaining monkeys in countdown</span>
+
+            <span class="c1"># cycles through monkey part by part</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">monkeys</span><span class="p">[</span><span class="n">row</span><span class="p">])):</span>
+                <span class="c1"># prints specific part of the monkey from the 2D cell</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">monkeys</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span><span class="p">)</span>
+
+            <span class="c1"># this new line gives separation between stanza of poem</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[0m"</span><span class="p">)</span>  <span class="c1"># reset color</span>
+            
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># out of all the loops, prints finishing messages</span>
+    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No more monkeys jumping on the bed"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"0000000000000000000000000000000000"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"             THE END              "</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>No more monkeys jumping on the bed
+0000000000000000000000000000000000
+             THE END              
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Animation,-the-Energetic-versus-Lazy-Programmer-methods">
+<a class="anchor" href="#Animation,-the-Energetic-versus-Lazy-Programmer-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Animation, the Energetic versus Lazy Programmer methods<a class="anchor-link" href="#Animation,-the-Energetic-versus-Lazy-Programmer-methods"> </a>
+</h2>
+<blockquote>
+<p>Animation is done like the old Disney films, lots of little images put togehter.  In these examples we eliminate using a 2D array, but simulate int with a sequence of print statements.</p>
+<ul>
+<li>This 1st sequence is a lot of lines of code.</li>
+<li>The 2nd takes the lazy programmer method to do the same.</li>
+<li>Candy challenge:Make you own ASCII art animation.</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd">* Creator: Nighthawk Coding Society</span>
+<span class="sd">Sailing Ship Animation (long method)</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span> <span class="nn">time</span> <span class="c1"># used for delay</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>  <span class="c1"># jupyter specific clear</span>
+
+<span class="c1"># ANSI Color Codes</span>
+<span class="n">Color34</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m"</span>
+<span class="n">Color37</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\u001b</span><span class="s2">[37m"</span>
+
+
+<span class="c1"># As you can see, its not very optimal </span>
+<span class="k">def</span> <span class="nf">ship1</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"    |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"    |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"\__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">" \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m -------------------------------------------- </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship2</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"      |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"      |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"  \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"   \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship3</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"        |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"        |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"    \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"     \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship4</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"          |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"          |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"      \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"       \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship5</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"            |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"            |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"        \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"         \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m -------------------------------------------- </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship6</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"              |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"              |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"          \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"           \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship7</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"            \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"             \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship8</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                  |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                  |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"              \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"               \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m -------------------------------------------- </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship9</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                    |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                    |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                 \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship10</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                      |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                      |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                  \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                   \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship11</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                        |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                        |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                    \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                     \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m -------------------------------------------- </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship12</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                          |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                          |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                      \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                       \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship13</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                            |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                            |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                        \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                         \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship14</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                              |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                              |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                          \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                           \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship15</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                            \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                             \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m -------------------------------------------- </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship16</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                  |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                  |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                              \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                               \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship17</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                    |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                    |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                 \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m -------------------------------------------- </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship18</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                      |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                      |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                  \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                   \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship19</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                        |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                        |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                    \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                     \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m -------------------------------------------- </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship20</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                          |\ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                          |/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                      \__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"                                       \____/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\u001b</span><span class="s2">[34m -------------------------------------------- </span><span class="se">\u001b</span><span class="s2">[37m"</span><span class="p">)</span>
+
+
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ship1</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship2</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship3</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship4</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship5</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship6</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship7</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship8</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship9</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship10</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship11</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship12</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship13</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship14</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship15</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship16</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship17</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship18</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship19</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ship20</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                          |\ 
+                                          |/ 
+                                      \__ |__/ 
+                                       \____/ 
+<span class="ansi-blue-fg"> -------------------------------------------- </span><span class="ansi-white-fg">
+</span></pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd">* Creator: Nighthawk Coding Society</span>
+<span class="sd">Sailing Ship Animation (programatic method)</span>
+<span class="sd">"""</span>
+
+<span class="kn">import</span> <span class="nn">time</span> <span class="c1"># used for delay</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>  <span class="c1"># jupyter specific clear</span>
+
+
+<span class="c1"># ANSI Color Codes</span>
+<span class="n">OCEAN_COLOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">"</span><span class="se">\u001B</span><span class="s2">[34m</span><span class="se">\u001B</span><span class="s2">[2D"</span>
+<span class="n">SHIP_COLOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">"</span><span class="se">\u001B</span><span class="s2">[35m</span><span class="se">\u001B</span><span class="s2">[2D"</span>
+<span class="n">RESET_COLOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">"</span><span class="se">\u001B</span><span class="s2">[0m</span><span class="se">\u001B</span><span class="s2">[2D"</span>
+
+<span class="k">def</span> <span class="nf">ship_print</span><span class="p">(</span><span class="n">position</span><span class="p">):</span>  <span class="c1"># print ship with colors and leading spaces according to position</span>
+    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">RESET_COLOR</span><span class="p">)</span>
+    
+    <span class="n">sp</span> <span class="o">=</span> <span class="s2">" "</span> <span class="o">*</span> <span class="n">position</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sp</span> <span class="o">+</span> <span class="s2">"    |\   "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sp</span> <span class="o">+</span> <span class="s2">"    |/   "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">SHIP_COLOR</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sp</span> <span class="o">+</span> <span class="s2">"\__ |__/ "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sp</span> <span class="o">+</span> <span class="s2">" \____/  "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">OCEAN_COLOR</span> <span class="o">+</span> <span class="s2">"--"</span><span class="o">*</span><span class="mi">32</span> <span class="o">+</span> <span class="n">RESET_COLOR</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">ship</span><span class="p">():</span>  <span class="c1"># ship function, loop/controller for animation speed and times</span>
+    <span class="c1"># loop control variables</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># start at zero</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="mi">60</span>  <span class="c1"># how many times to repeat</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># count by 2</span>
+
+    <span class="c1"># loop purpose is to animate ship sailing</span>
+    <span class="k">for</span> <span class="n">position</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">distance</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+        <span class="n">ship_print</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>  <span class="c1"># call to function with parameter</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span>
+
+        
+<span class="n">ship</span><span class="p">()</span> <span class="c1"># activate/call ship function</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+                                                              |\   
+                                                              |/   
+<span class="ansi-magenta-fg">                                                          \__ |__/ 
+                                                           \____/  
+</span><span class="ansi-blue-fg">----------------------------------------------------------------</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/FastPages/1.d/2.b/3.b/c3.1/2023/05/16/DS-arrays_lab.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/FastPages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://vardaansinha.github.io/FastPages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/FastPages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
