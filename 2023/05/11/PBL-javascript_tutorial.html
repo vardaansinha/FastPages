@@ -144,23 +144,11 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span> // required to allow cell to be JavaScript enabled
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"JavaScript/Jupyter Output Intro"</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"Hi there."</span><span class="p">);</span>
 
 <span class="c1">// Browser Console output; debugging or tracing</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"I am talking to Mr. Mortensen right now."</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"I am taking CSA next year."</span><span class="p">);</span>
-
-<span class="c1">// Document Object Model (DOM) output; output to HTML, CSS which is standard for a Web Page</span>
-<span class="c1">// &lt;mark&gt;select element method&lt;/mark&gt;: DOM native JavaScript get, document.getElementByID</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"output"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">"Bye bye"</span><span class="p">;</span>
-<span class="c1">// &lt;mark&gt;jQuery CSS-style method&lt;/mark&gt;: Tag for DOM selector, $('#output')</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'#output'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'&lt;br&gt;&lt;b&gt;Bye Bye Again!'</span><span class="p">);</span>  <span class="c1">// br is break or new line, b is bold</span>
-
-<span class="c1">// Jupyter built in magic element for testing and convenience of development</span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">"MORE TESTING"</span><span class="p">);</span> <span class="c1">// element is output option as part of %%js magic</span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'&lt;br&gt;&lt;b&gt;MORE TESTING AGAIN!'</span><span class="p">);</span>
-
-<span class="c1">//alert("Hello, World!");</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">" I am talking to Mr. Mortensen right now."</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">" I am taking AP CSA next year."</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -175,27 +163,15 @@ window.onload = wrap_img;
 
 
 
-<div id="a243e5cc-8ed2-4c3c-a3ad-85c4141669bf"></div>
+<div id="7457e48a-e608-4808-98b3-9a69152d902f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a243e5cc-8ed2-4c3c-a3ad-85c4141669bf');
-console.log("JavaScript/Jupyter Output Intro");
+var element = $('#7457e48a-e608-4808-98b3-9a69152d902f');
+element.append("Hi there.");
 
 // Browser Console output; debugging or tracing
-console.log("I am talking to Mr. Mortensen right now.");
-console.log("I am taking CSA next year.");
-
-// Document Object Model (DOM) output; output to HTML, CSS which is standard for a Web Page
-// <mark>select element method</mark>: DOM native JavaScript get, document.getElementByID
-document.getElementById("output").textContent = "Bye bye";
-// <mark>jQuery CSS-style method</mark>: Tag for DOM selector, $('#output')
-$('#output').append('<br><b>Bye Bye Again!');  // br is break or new line, b is bold
-
-// Jupyter built in magic element for testing and convenience of development
-element.text("MORE TESTING"); // element is output option as part of %%js magic
-element.append('<br><b>MORE TESTING AGAIN!');
-
-//alert("Hello, World!");
+element.append(" I am talking to Mr. Mortensen right now.");
+element.append(" I am taking AP CSA next year.");
 
 </script>
 </div>
@@ -247,10 +223,10 @@ element.append('<br><b>MORE TESTING AGAIN!');
 
 
 
-<div id="93f0a0dd-b1cc-4ec7-8ef4-090547944740"></div>
+<div id="f620a657-1b42-4f3e-a45e-14a8ea85720a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#93f0a0dd-b1cc-4ec7-8ef4-090547944740');
+var element = $('#f620a657-1b42-4f3e-a45e-14a8ea85720a');
 console.log("Multiple Outputs Using One Variable");
 
 var msg = "I am defining the variable msg here.";
