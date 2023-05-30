@@ -163,10 +163,10 @@ window.onload = wrap_img;
 
 
 
-<div id="c54f304b-1ddf-402a-a0b0-b9e6052b3bcf"></div>
+<div id="cbd8f9a3-5ccd-4869-b889-b4dbfffdea99"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c54f304b-1ddf-402a-a0b0-b9e6052b3bcf');
+var element = $('#cbd8f9a3-5ccd-4869-b889-b4dbfffdea99');
 element.append("Hi there.");
 
 // Browser Console output; debugging or tracing
@@ -223,10 +223,10 @@ element.append(" I am taking AP CSA next year.");
 
 
 
-<div id="3778f065-1b6e-46cb-b49d-f60f8a5db4f5"></div>
+<div id="460b7a0e-4ad0-4b5e-8c34-805ff35524d3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3778f065-1b6e-46cb-b49d-f60f8a5db4f5');
+var element = $('#460b7a0e-4ad0-4b5e-8c34-805ff35524d3');
 console.log("Multiple Outputs Using One Variable");
 
 var msg = "I am defining the variable msg here.";
@@ -442,20 +442,20 @@ element.text(msg);
   <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
   
   <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="err">#</span> <span class="nx">sortTable</span> <span class="kd">function</span> <span class="nx">meant</span> <span class="nx">to</span> <span class="nx">sort</span> <span class="nx">based</span> <span class="nx">on</span> <span class="nx">each</span> <span class="nx">column</span> <span class="nx">header</span><span class="p">.</span>
+    <span class="c1">// sortTable function meant to sort based on each column header.</span>
 <span class="kd">function</span> <span class="nx">sortTable</span><span class="p">(</span><span class="nx">columnName</span><span class="p">)</span> <span class="p">{</span>
   <span class="kr">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'sportsTable'</span><span class="p">);</span>
-  <span class="err">#</span> <span class="nx">constant</span> <span class="nx">calls</span> <span class="nx">the</span> <span class="nx">tableID</span> <span class="nx">that</span> <span class="nx">was</span> <span class="nx">previously</span> <span class="nx">defined</span>
+  <span class="c1">// constant calls the tableID that was previously defined</span>
   <span class="kr">const</span> <span class="nx">rows</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">table</span><span class="p">.</span><span class="nx">tBodies</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">));</span>
   <span class="kr">const</span> <span class="nx">headerRow</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'thead'</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
   <span class="kr">const</span> <span class="nx">isAscending</span> <span class="o">=</span> <span class="o">!</span><span class="nx">headerRow</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">'asc'</span><span class="p">);</span>
-  <span class="err">#</span> <span class="k">this</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">very</span> <span class="nx">important</span> <span class="nx">line</span> <span class="o">-</span> <span class="nx">the</span> <span class="nx">asc</span> <span class="kr">class</span> <span class="nx">helps</span> <span class="nx">the</span> <span class="kd">function</span> <span class="nx">decide</span> <span class="nx">whether</span> <span class="nx">or</span> <span class="nx">not</span> <span class="nx">the</span> <span class="nx">column</span> <span class="nx">is</span> <span class="nx">going</span> <span class="nx">to</span> <span class="nx">be</span> <span class="nx">sorted</span> <span class="k">in</span> <span class="nx">increasing</span> <span class="nx">order</span> <span class="nx">or</span> <span class="nx">decreasing</span> <span class="nx">order</span><span class="p">.</span>
+  <span class="c1">// this is a very important line - the asc class helps the function decide whether or not the column is going to be sorted in increasing order or decreasing order.</span>
   
   <span class="nx">rows</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">rowA</span><span class="p">,</span> <span class="nx">rowB</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">cellA</span> <span class="o">=</span> <span class="nx">rowA</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="sb">`td:nth-child(</span><span class="si">${</span><span class="nx">getColumnIndex</span><span class="p">(</span><span class="nx">columnName</span><span class="p">)</span><span class="si">}</span><span class="sb">)`</span><span class="p">).</span><span class="nx">innerText</span><span class="p">;</span>
     <span class="kd">let</span> <span class="nx">cellB</span> <span class="o">=</span> <span class="nx">rowB</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="sb">`td:nth-child(</span><span class="si">${</span><span class="nx">getColumnIndex</span><span class="p">(</span><span class="nx">columnName</span><span class="p">)</span><span class="si">}</span><span class="sb">)`</span><span class="p">).</span><span class="nx">innerText</span><span class="p">;</span>
-    <span class="err">#</span> <span class="nx">the</span> <span class="nx">nth</span><span class="o">-</span><span class="nx">child</span> <span class="nx">selector</span> <span class="nx">is</span> <span class="nx">different</span> <span class="nx">from</span> <span class="nx">normal</span> <span class="nx">JS</span> <span class="nx">arrays</span><span class="p">,</span> <span class="nx">these</span> <span class="nx">have</span> <span class="nx">an</span> <span class="nx">index</span> <span class="nx">starting</span> <span class="nx">at</span> <span class="mf">1</span> <span class="nx">rather</span> <span class="nx">than</span> <span class="mf">0</span>
-    <span class="err">#</span> <span class="nx">the</span> <span class="nx">rows</span> <span class="nx">are</span> <span class="nx">sorted</span> <span class="nx">based</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">column</span><span class="p">.</span> <span class="nx">getColumnIndex</span> <span class="nx">is</span> <span class="nx">used</span> <span class="nx">to</span> <span class="nx">get</span> <span class="nx">the</span> <span class="nx">index</span> <span class="k">of</span> <span class="nx">the</span> <span class="nx">column</span><span class="p">.</span> 
+    <span class="c1">// the nth-child selector is different from normal JS arrays, these have an index starting at 1 rather than 0</span>
+    <span class="c1">// the rows are sorted based on the column. getColumnIndex is used to get the index of the column. </span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">columnName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">===</span> <span class="s1">'name'</span> <span class="o">||</span> <span class="nx">columnName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">===</span> <span class="s1">'team'</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">isAscending</span> <span class="o">?</span> <span class="nx">cellA</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="nx">cellB</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="p">{</span> <span class="nx">sensitivity</span><span class="o">:</span> <span class="s1">'base'</span> <span class="p">})</span> <span class="o">:</span> <span class="nx">cellB</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="nx">cellA</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="p">{</span> <span class="nx">sensitivity</span><span class="o">:</span> <span class="s1">'base'</span> <span class="p">});</span>
@@ -469,26 +469,26 @@ element.text(msg);
       <span class="nx">cellB</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">cellB</span><span class="p">);</span>
     <span class="p">}</span>
     
-    <span class="err">#</span> <span class="nx">games</span> <span class="nx">played</span> <span class="nx">was</span> <span class="nx">not</span> <span class="nx">sorting</span> <span class="k">for</span> <span class="nx">some</span> <span class="nx">odd</span> <span class="nx">reason</span><span class="p">,</span> <span class="nx">which</span> <span class="nx">is</span> <span class="nx">why</span> <span class="k">this</span> <span class="k">if</span> <span class="nx">statement</span> <span class="nx">was</span> <span class="nx">added</span><span class="p">.</span>
-    <span class="err">#</span> <span class="nx">purpose</span> <span class="nx">is</span> <span class="nx">to</span> <span class="nx">parse</span> <span class="nx">the</span> <span class="nx">values</span> <span class="nx">as</span> <span class="nx">an</span> <span class="nx">integer</span> <span class="nx">and</span> <span class="nx">then</span> <span class="nx">sort</span> <span class="nx">numerically</span><span class="p">.</span> 
+    <span class="c1">// games played was not sorting for some odd reason, which is why this if statement was added.</span>
+    <span class="c1">// purpose is to parse the values as an integer and then sort numerically. </span>
     
     <span class="k">return</span> <span class="nx">isAscending</span> <span class="o">?</span> <span class="nx">cellA</span> <span class="o">-</span> <span class="nx">cellB</span> <span class="o">:</span> <span class="nx">cellB</span> <span class="o">-</span> <span class="nx">cellA</span><span class="p">;</span>
   <span class="p">});</span>
   
   <span class="nx">rows</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">row</span> <span class="p">=&gt;</span> <span class="nx">table</span><span class="p">.</span><span class="nx">tBodies</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">row</span><span class="p">));</span>
   <span class="nx">headerRow</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s1">'asc'</span><span class="p">);</span>
-  <span class="err">#</span> <span class="k">this</span> <span class="nx">is</span> <span class="nx">meant</span> <span class="k">for</span> <span class="nx">after</span> <span class="nx">sorting</span><span class="p">.</span> <span class="nx">after</span> <span class="nx">the</span> <span class="nx">sorting</span> <span class="nx">is</span> <span class="nx">done</span><span class="p">,</span> <span class="nx">the</span> <span class="nx">appendChild</span> <span class="nx">is</span> <span class="nx">meant</span> <span class="nx">to</span> <span class="nx">append</span> <span class="nx">these</span> <span class="nx">cell</span> <span class="nx">values</span> <span class="nx">back</span> <span class="nx">into</span> <span class="nx">the</span> <span class="nx">specified</span> <span class="nx">table</span><span class="p">.</span>
+  <span class="c1">// this is meant for after sorting. after the sorting is done, the appendChild is meant to append these cell values back into the specified table.</span>
 <span class="p">}</span>
 
     
     <span class="kd">function</span> <span class="nx">getColumnIndex</span><span class="p">(</span><span class="nx">columnName</span><span class="p">)</span> <span class="p">{</span>
-      <span class="err">#</span> <span class="nx">each</span> <span class="nx">column</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">taken</span> <span class="k">in</span> <span class="nx">columnName</span> <span class="nx">to</span> <span class="nx">get</span> <span class="nx">its</span> <span class="nx">index</span><span class="p">.</span>
+      <span class="c1">// each column name is taken in columnName to get its index.</span>
       <span class="kr">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'sportsTable'</span><span class="p">);</span>
       <span class="kr">const</span> <span class="nx">headerRow</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'thead'</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
-      <span class="err">#</span> <span class="nx">contains</span> <span class="nx">the</span> <span class="nx">column</span> <span class="nx">headers</span><span class="p">,</span> <span class="nx">index</span> <span class="mf">0</span>
+      <span class="c1">// contains the column headers, index 0</span>
       <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">headerRow</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'th'</span><span class="p">));</span>
       <span class="k">return</span> <span class="nx">headers</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">header</span> <span class="p">=&gt;</span> <span class="nx">header</span><span class="p">.</span><span class="nx">innerText</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">===</span> <span class="nx">columnName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span> <span class="o">+</span> <span class="mf">1</span><span class="p">;</span>
-      <span class="err">#</span> <span class="nx">converts</span> <span class="nx">column</span> <span class="nx">header</span> <span class="nx">names</span> <span class="nx">to</span> <span class="nx">lowercase</span> <span class="nx">to</span> <span class="nx">account</span> <span class="k">for</span> <span class="nx">sortTable</span> <span class="nx">definitions</span>
+      <span class="c1">// converts column header names to lowercase to account for sortTable definitions</span>
     <span class="p">}</span>
   <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
