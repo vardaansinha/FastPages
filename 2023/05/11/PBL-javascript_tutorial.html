@@ -230,10 +230,10 @@ If you want to personalize the greeting by using your name, you can modify the c
 
 
 
-<div id="7abfcba3-78c0-4271-ac10-220681906dc0"></div>
+<div id="fa2cfe38-f661-4a4f-a5da-4cbb48c18542"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7abfcba3-78c0-4271-ac10-220681906dc0');
+var element = $('#fa2cfe38-f661-4a4f-a5da-4cbb48c18542');
 element.append("Hi there.");
 
 // Browser Console output; debugging or tracing
@@ -290,10 +290,10 @@ element.append(" I am taking AP CSA next year.");
 
 
 
-<div id="f0a02cbc-d8a9-40a3-861c-8fa88a1db1d3"></div>
+<div id="46159dcd-7224-46e6-b434-f075422cded4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f0a02cbc-d8a9-40a3-861c-8fa88a1db1d3');
+var element = $('#46159dcd-7224-46e6-b434-f075422cded4');
 console.log("Multiple Outputs Using One Variable");
 
 var msg = "I am defining the variable msg here.";
@@ -490,10 +490,10 @@ element.text(msg);
 
 
 
-<div id="dc11df71-1a1b-4e21-91da-14c8871ac0fb"></div>
+<div id="c06ed623-3085-47a4-92a9-10c4edb5d2ae"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dc11df71-1a1b-4e21-91da-14c8871ac0fb');
+var element = $('#c06ed623-3085-47a4-92a9-10c4edb5d2ae');
 class NBA {
   constructor(name, team, ppg) {
     this.name = name;
@@ -622,6 +622,16 @@ js.logIt();
   
   <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="c1">// sortTable function meant to sort based on each column header.</span>
+    <span class="kd">function</span> <span class="nx">getColumnIndex</span><span class="p">(</span><span class="nx">columnName</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// each column name is taken in columnName to get its index.</span>
+      <span class="kr">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'sportsTable'</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">headerRow</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'thead'</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
+      <span class="c1">// contains the column headers, index 0</span>
+      <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">headerRow</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'th'</span><span class="p">));</span>
+      <span class="k">return</span> <span class="nx">headers</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">header</span> <span class="p">=&gt;</span> <span class="nx">header</span><span class="p">.</span><span class="nx">innerText</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">===</span> <span class="nx">columnName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span> <span class="o">+</span> <span class="mf">1</span><span class="p">;</span>
+      <span class="c1">// converts column header names to lowercase to account for sortTable definitions</span>
+    <span class="p">}</span>
+    
 <span class="kd">function</span> <span class="nx">sortTable</span><span class="p">(</span><span class="nx">columnName</span><span class="p">)</span> <span class="p">{</span>
   <span class="kr">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'sportsTable'</span><span class="p">);</span>
   <span class="c1">// constant calls the tableID that was previously defined</span>
@@ -659,16 +669,6 @@ js.logIt();
   <span class="c1">// this is meant for after sorting. after the sorting is done, the appendChild is meant to append these cell values back into the specified table.</span>
 <span class="p">}</span>
 
-    
-    <span class="kd">function</span> <span class="nx">getColumnIndex</span><span class="p">(</span><span class="nx">columnName</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// each column name is taken in columnName to get its index.</span>
-      <span class="kr">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'sportsTable'</span><span class="p">);</span>
-      <span class="kr">const</span> <span class="nx">headerRow</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'thead'</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
-      <span class="c1">// contains the column headers, index 0</span>
-      <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">headerRow</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'th'</span><span class="p">));</span>
-      <span class="k">return</span> <span class="nx">headers</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">header</span> <span class="p">=&gt;</span> <span class="nx">header</span><span class="p">.</span><span class="nx">innerText</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">===</span> <span class="nx">columnName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span> <span class="o">+</span> <span class="mf">1</span><span class="p">;</span>
-      <span class="c1">// converts column header names to lowercase to account for sortTable definitions</span>
-    <span class="p">}</span>
   <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 
